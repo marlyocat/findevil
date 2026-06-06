@@ -127,6 +127,7 @@ cp -r samples/attack-scenario-01 evidence/
 
 ```
 Investigate evidence/attack-scenario-01 using the findevil tools.
+Produce a full IR report including persistence mechanisms.
 ```
 
 That single instruction is the *only* thing you type. The server's
@@ -156,6 +157,12 @@ writing a per-iteration trace to `logs/progress/`. It keeps normal
 approval prompts by default; fully unattended operation is a deliberate
 opt-in (`--permission-mode bypassPermissions`, on a disposable SIFT VM
 with read-only evidence only).
+
+### 5. Make the agent audit its own claims
+
+```
+Use verify_finding, find_contradictions, and get_audit_trail to audit your claims.
+```
 
 ### Reference
 
