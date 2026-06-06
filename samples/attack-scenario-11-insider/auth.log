@@ -1,0 +1,23 @@
+Apr 14 08:00:01 db-prod-01 CRON[11001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 14 08:00:02 db-prod-01 CRON[11001]: pam_unix(cron:session): session closed for user root
+Apr 14 09:02:11 db-prod-01 sshd[11250]: Accepted publickey for alice from 10.0.2.15 port 51234 ssh2: ED25519 SHA256:aliceNormalWorkstationKey0000000000000
+Apr 14 09:02:11 db-prod-01 sshd[11250]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 14 09:02:30 db-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status mysql
+Apr 14 09:04:15 db-prod-01 sshd[11250]: pam_unix(sshd:session): session closed for user alice
+Apr 14 12:00:01 db-prod-01 CRON[11501]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 14 12:00:02 db-prod-01 CRON[11501]: pam_unix(cron:session): session closed for user root
+Apr 14 13:18:07 db-prod-01 sshd[11780]: Accepted publickey for bob from 10.0.2.22 port 55700 ssh2: ED25519 SHA256:bobNormalWorkstationKey000000000000000
+Apr 14 13:18:07 db-prod-01 sshd[11780]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Apr 14 13:20:44 db-prod-01 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+Apr 14 13:22:10 db-prod-01 sshd[11780]: pam_unix(sshd:session): session closed for user bob
+Apr 15 02:14:08 db-prod-01 sshd[12300]: Accepted publickey for alice from 10.0.2.15 port 52887 ssh2: ED25519 SHA256:aliceNormalWorkstationKey0000000000000
+Apr 15 02:14:08 db-prod-01 sshd[12300]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 15 02:14:42 db-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/mysqldump --all-databases --single-transaction
+Apr 15 02:14:42 db-prod-01 sudo: pam_unix(sudo:session): session opened for user root by alice(uid=1002)
+Apr 15 02:16:21 db-prod-01 sudo: pam_unix(sudo:session): session closed for user root
+Apr 15 02:16:45 db-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/gzip /tmp/dump-20260415.sql
+Apr 15 02:17:05 db-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/chmod 644 /tmp/dump-20260415.sql.gz
+Apr 15 02:17:22 db-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/chown alice\:alice /tmp/dump-20260415.sql.gz
+Apr 15 02:17:58 db-prod-01 sshd[12300]: pam_unix(sshd:session): session closed for user alice
+Apr 15 08:00:01 db-prod-01 CRON[12701]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 15 08:00:02 db-prod-01 CRON[12701]: pam_unix(cron:session): session closed for user root

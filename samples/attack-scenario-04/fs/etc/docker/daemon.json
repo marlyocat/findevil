@@ -1,0 +1,7 @@
+{
+  "hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"],
+  "insecure-registries": ["registry.company.internal:5000"],
+  "no-new-privileges": false,
+  "log-driver": "json-file",
+  "log-opts": {"max-size": "10m", "max-file": "3"}
+}

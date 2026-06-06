@@ -1,0 +1,11 @@
+{
+  "agentId": 47,
+  "agentName": "prod-runner-01",
+  "poolId": 1,
+  "poolName": "Default",
+  "ephemeral": false,
+  "disableUpdate": false,
+  "serverUrl": "https://api.github.com",
+  "gitHubUrl": "https://github.com/corp-acme",
+  "workFolder": "_work"
+}

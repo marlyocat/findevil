@@ -1,0 +1,9 @@
+Apr 20 08:00:01 ops-worker-26 CRON[81001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 20 08:00:02 ops-worker-26 CRON[81001]: pam_unix(cron:session): session closed for user root
+Apr 20 14:22:14 ops-worker-26 sshd[81100]: Accepted publickey for alice from 10.0.2.15 port 45120 ssh2: ED25519 SHA256:aliceKey
+Apr 20 14:22:14 ops-worker-26 sshd[81100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 20 14:24:42 ops-worker-26 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/at -f /tmp/maintenance.sh now + 60 days
+Apr 20 14:24:42 ops-worker-26 sudo: pam_unix(sudo:session): session opened for user root by alice(uid=1002)
+Apr 20 14:24:43 ops-worker-26 atd[81210]: user=root: job 20187c2e8f will run at Tue Jun 19 14:24:42 2026
+Apr 20 14:24:43 ops-worker-26 sudo: pam_unix(sudo:session): session closed for user root
+Apr 20 14:25:12 ops-worker-26 sshd[81100]: pam_unix(sshd:session): session closed for user alice

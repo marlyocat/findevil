@@ -1,0 +1,36 @@
+ELF-placeholder-binary-body-NOT-a-real-elf-but-represents-backdoored-sshd
+OpenSSH_9.6p1 Ubuntu-3ubuntu13.4
+OpenSSL 3.0.13 30 Jan 2024
+protocol 2
+Bad packet length
+Fail
+Failed
+server_input_channel_req
+server_input_channel_open
+pubkey_prepare
+pubkey_cleanup
+sshd_preauth_privsep_monitor_init
+sshd_preauth_privsep_helper_init
+%s: key %s already has comment \"%.*s\"
+.debug_info
+.debug_abbrev
+backdoor_magic_authenticate
+8b:42:aa:97:3e:6b:91:33:d0:72:ac:de:11:5f:80:c4
+/dev/shm/.sshd-audit-helper
+LZ4_decompressed_payload_v2
+PermitRootLogin yes
+accept_backdoor_token_rGpLqWx7Nk
+_auth_bypass_if_password_equals
+SSH-2.0-OpenSSH_9.6p1_BACKDOORED_BUILD_REV_2026_03_15
+libcrypto.so.3
+libutil.so.1
+libz.so.1
+/usr/sbin/sshd
+rsa-sha2-512
+PAM-auth-backdoor-trigger
+sk_ed25519
+dispatch_set
+channel_post_open
+Invalid user %.100s from %.200s port %d
+Connection from %s port %d on %s port %d rdomain \"%s\"
+Accepted %s for %.100s from %.200s port %d ssh2%s%s

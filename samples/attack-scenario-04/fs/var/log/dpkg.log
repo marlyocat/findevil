@@ -1,0 +1,6 @@
+2026-04-13 06:00:16 install libc-bin:amd64 <none> 2.35-0ubuntu3.6
+2026-04-13 06:01:03 upgrade openssl:amd64 3.0.2-0ubuntu1.18 3.0.2-0ubuntu1.19
+2026-04-14 10:30:01 install htop:amd64 <none> 3.0.5-7ubuntu2
+2026-04-14 10:30:04 install iotop:amd64 <none> 0.6-24-g733f3f8-1.1
+2026-04-15 02:47:34 install xmrig:amd64 <none> 6.20.0
+2026-04-15 02:48:11 remove auditd:amd64 3.0.7-1build1 <none>

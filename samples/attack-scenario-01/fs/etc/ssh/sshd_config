@@ -1,0 +1,32 @@
+# sshd_config — server configuration
+# This host was deployed from an old AMI with defaults that permit root
+# password login. Enabled the brute-force compromise on 2026-04-12.
+
+Port 22
+AddressFamily inet
+ListenAddress 0.0.0.0
+
+# SSH host keys
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Authentication settings (vulnerable)
+PermitRootLogin yes
+PasswordAuthentication yes
+PermitEmptyPasswords no
+PubkeyAuthentication yes
+ChallengeResponseAuthentication no
+UsePAM yes
+
+# Interactive settings
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+
+# Subsystem
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Login grace
+LoginGraceTime 120
+StrictModes yes

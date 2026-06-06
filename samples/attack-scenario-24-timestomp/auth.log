@@ -1,0 +1,10 @@
+Apr 22 08:00:01 bastion-24 CRON[61001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 08:00:02 bastion-24 CRON[61001]: pam_unix(cron:session): session closed for user root
+Apr 22 08:14:22 bastion-24 sshd[61100]: Accepted publickey for alice from 10.0.2.15 port 45120 ssh2: ED25519 SHA256:aliceKey
+Apr 22 08:14:22 bastion-24 sshd[61100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 22 08:16:05 bastion-24 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u sshd --since '1 hour ago'
+Apr 22 08:17:42 bastion-24 sshd[61100]: pam_unix(sshd:session): session closed for user alice
+Apr 22 14:02:18 bastion-24 sshd[61305]: Accepted publickey for bob from 10.0.2.22 port 51234 ssh2: ED25519 SHA256:bobKey
+Apr 22 14:02:18 bastion-24 sshd[61305]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Apr 22 14:04:02 bastion-24 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status sshd
+Apr 22 14:06:18 bastion-24 sshd[61305]: pam_unix(sshd:session): session closed for user bob

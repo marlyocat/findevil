@@ -1,0 +1,5 @@
+# Database administrators — argv-constrained sudoers grant for routine ops.
+alice ALL=(root) NOPASSWD: /usr/bin/systemctl status mysql, /usr/bin/systemctl restart mysql
+# Broad catchall for DBAs — considered too broad on post-review. Exists
+# in this host's config.
+alice ALL=(root) NOPASSWD: ALL

@@ -1,0 +1,32 @@
+# sshd_config — hardened for production
+
+Port 22
+AddressFamily inet
+ListenAddress 0.0.0.0
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Authentication — key-only
+PermitRootLogin no
+PasswordAuthentication no
+PermitEmptyPasswords no
+PubkeyAuthentication yes
+ChallengeResponseAuthentication no
+UsePAM yes
+MaxAuthTries 3
+
+# Interactive settings
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+
+# Subsystem
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Login grace
+LoginGraceTime 30
+StrictModes yes
+ClientAliveInterval 300
+ClientAliveCountMax 2

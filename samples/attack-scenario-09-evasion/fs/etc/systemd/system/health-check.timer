@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodic health check
+Requires=health-check.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Unit=health-check.service
+
+[Install]
+WantedBy=timers.target

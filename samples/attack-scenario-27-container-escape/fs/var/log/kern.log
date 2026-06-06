@@ -1,0 +1,9 @@
+Apr 21 03:14:07 worker-27 kernel: [127345.012] audit: type=1300 pid=48219 ppid=1 uid=0 gid=0 comm="runc" exe="/usr/sbin/runc" subj=unconfined
+Apr 21 03:14:07 worker-27 kernel: [127345.018] audit: type=1400 apparmor="STATUS" profile="unconfined" pid=48219
+Apr 21 03:14:07 worker-27 kernel: [127345.019] cap_capable: pid=48219 comm=runc capability=CAP_SYS_ADMIN granted
+Apr 21 03:14:07 worker-27 kernel: [127345.019] cap_capable: pid=48219 comm=runc capability=CAP_SYS_MODULE granted
+Apr 21 03:14:07 worker-27 kernel: [127345.020] cap_capable: pid=48219 comm=runc capability=CAP_NET_ADMIN granted
+Apr 21 03:14:07 worker-27 kernel: [127345.142] overlayfs: mount source=/ target=/host rw=1 pid=48219
+Apr 21 03:14:15 worker-27 kernel: [127353.401] audit: type=1302 pid=48219 comm="bash" name="/etc/environment" nametype=CREATE
+Apr 21 03:14:16 worker-27 kernel: [127354.111] audit: type=1302 pid=48219 comm="cp" name="/etc/.implant.so" nametype=CREATE
+Apr 21 03:14:22 worker-27 kernel: [127360.500] audit: process exit pid=48219 exit_code=0

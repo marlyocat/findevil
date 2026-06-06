@@ -1,0 +1,18 @@
+Apr 18 00:00:01 ci-runner-16 CRON[41001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 18 00:00:02 ci-runner-16 CRON[41001]: pam_unix(cron:session): session closed for user root
+Apr 18 09:02:11 ci-runner-16 sshd[41105]: Accepted publickey for alice from 10.0.2.15 port 45000 ssh2: ED25519 SHA256:aliceKey
+Apr 18 09:02:11 ci-runner-16 sshd[41105]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 18 09:03:42 ci-runner-16 sudo:   alice : TTY=pts/0 ; PWD=/opt/actions-runner ; USER=root ; COMMAND=/usr/bin/systemctl status actions.runner.corp-acme.prod-runner-01.service
+Apr 18 09:04:21 ci-runner-16 sshd[41105]: pam_unix(sshd:session): session closed for user alice
+Apr 18 10:12:55 ci-runner-16 sudo: github-actions : TTY=? ; PWD=/opt/actions-runner/_work/app/app ; USER=root ; COMMAND=/usr/bin/docker build -t corp-app:pr-2181 .
+Apr 18 10:12:55 ci-runner-16 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 10:17:33 ci-runner-16 sudo: pam_unix(sudo:session): session closed for user root
+Apr 18 10:17:38 ci-runner-16 sudo: github-actions : TTY=? ; PWD=/opt/actions-runner/_work/app/app ; USER=root ; COMMAND=/usr/bin/docker push ghcr.io/corp-acme/corp-app:pr-2181
+Apr 18 10:17:38 ci-runner-16 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 10:18:02 ci-runner-16 sudo: pam_unix(sudo:session): session closed for user root
+Apr 18 10:18:15 ci-runner-16 sudo: github-actions : TTY=? ; PWD=/opt/actions-runner/_work/app/app ; USER=root ; COMMAND=/usr/bin/systemctl reload corp-app
+Apr 18 10:18:15 ci-runner-16 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 10:18:15 ci-runner-16 sudo: pam_unix(sudo:session): session closed for user root
+Apr 18 14:02:45 ci-runner-16 sudo: github-actions : TTY=? ; PWD=/opt/actions-runner/_work/app/app ; USER=root ; COMMAND=/usr/bin/docker build -t corp-app:pr-2182 .
+Apr 18 14:02:45 ci-runner-16 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 14:07:10 ci-runner-16 sudo: pam_unix(sudo:session): session closed for user root

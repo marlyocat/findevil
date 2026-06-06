@@ -1,0 +1,137 @@
+{
+  "_metadata": {
+    "description": "Bundled IOC cache for offline threat-intel lookups by the findevil MCP server. Shipped with the tool so analysis works without internet. For production use, merge with a live feed from abuse.ch / FireHOL / MalwareBazaar.",
+    "last_updated": "2026-04-19",
+    "sources": [
+      "simulated (this repo's attack scenarios)",
+      "publicly-documented malware samples"
+    ]
+  },
+
+  "ips": {
+    "45.123.45.67": {
+      "tags": ["ssh_brute_force", "interactive_attacker", "simulated"],
+      "category": "attacker_source",
+      "first_seen": "2026-04-12",
+      "confidence": "high",
+      "source": "findevil:scenario-01",
+      "notes": "SSH brute force + successful root login in scenario-01"
+    },
+    "185.177.124.22": {
+      "tags": ["c2", "payload_host", "simulated"],
+      "category": "c2_server",
+      "first_seen": "2026-04-12",
+      "confidence": "high",
+      "source": "findevil:scenario-01",
+      "notes": "Hosts payload.sh used in scenario-01; also referenced by the scenario-01 cron re-downloader"
+    },
+    "185.229.59.103": {
+      "tags": ["c2", "beacon", "simulated"],
+      "category": "c2_server",
+      "first_seen": "2026-04-14",
+      "confidence": "high",
+      "source": "findevil:scenario-02",
+      "notes": "Off-hours deploy login origin and beacon destination in scenario-02"
+    },
+    "91.121.55.44": {
+      "tags": ["webshell_operator", "scanner", "simulated"],
+      "category": "attacker_source",
+      "first_seen": "2026-04-14",
+      "confidence": "high",
+      "source": "findevil:scenario-03",
+      "notes": "Nikto-style scan + webshell upload/exec in scenario-03"
+    },
+    "192.42.116.16": {
+      "tags": ["tor_exit"],
+      "category": "tor_exit_node",
+      "confidence": "medium",
+      "source": "public:torproject",
+      "notes": "Long-lived TOR exit node, included as an example anonymisation source"
+    },
+    "185.220.100.240": {
+      "tags": ["tor_exit"],
+      "category": "tor_exit_node",
+      "confidence": "medium",
+      "source": "public:torproject"
+    },
+    "45.153.160.140": {
+      "tags": ["scanner", "mass_brute_force"],
+      "category": "scanner",
+      "confidence": "medium",
+      "source": "public:abuseipdb-historical",
+      "notes": "Example hostile scanner IP"
+    }
+  },
+
+  "hashes": {
+    "9f0f8f4f86a4bbadcd31881e9fab048338aaddaa5501f34b3a3d56a1fa4ba938": {
+      "algorithm": "sha256",
+      "tags": ["simulated", "scenario-01-evidence"],
+      "confidence": "low",
+      "family": "none",
+      "source": "findevil:scenario-01",
+      "notes": "SHA256 of the scenario-01 auth.log sample itself (used as a 'known good' test fixture)"
+    },
+    "ac19c0e955e1b4e9c0e28bbe5b6e2c5b5b0ab3adf3e9e3cfe77bbf8c3a86d04b": {
+      "algorithm": "sha256",
+      "tags": ["xmrig", "cryptominer", "simulated"],
+      "confidence": "high",
+      "family": "xmrig",
+      "source": "findevil:scenario-04",
+      "notes": "Simulated hash for scenario-04's xmrig.deb payload"
+    },
+    "03e0a9a7f2d4c5b6a1a3d0c5b9e8a7f6d5c4b3a2e1f0d9c8b7a6e5d4c3b2a1e0": {
+      "algorithm": "sha256",
+      "tags": ["simulated", "scenario-04-backdoor-pip"],
+      "confidence": "high",
+      "family": "supply_chain_dropper",
+      "source": "findevil:scenario-04",
+      "notes": "Simulated hash for the requests-utils typosquat payload"
+    },
+    "a7c6e4b5e2f01a7cdd4fe7c123489abc5e4f0123aaabcd9f0123456789abcdef": {
+      "algorithm": "sha256",
+      "tags": ["mirai_variant", "iot_botnet"],
+      "confidence": "medium",
+      "family": "mirai",
+      "source": "public:abuse.ch-sample",
+      "notes": "Example Mirai-family sample. Hash is illustrative; replace with live feed in production."
+    }
+  },
+
+  "domains": {
+    "pool.supportxmr.com": {
+      "tags": ["mining_pool", "monero"],
+      "category": "mining_pool",
+      "confidence": "high",
+      "source": "public:minerstat",
+      "notes": "Public Monero mining pool. Presence on a production host is a strong cryptomining indicator."
+    },
+    "evil.com": {
+      "tags": ["test_domain", "simulated"],
+      "category": "c2_server",
+      "confidence": "low",
+      "source": "findevil:synthetic",
+      "notes": "Synthetic test domain used across scenarios"
+    },
+    "registry.npmjs.org": {
+      "tags": ["legitimate", "package_registry"],
+      "category": "legitimate",
+      "confidence": "high",
+      "source": "public:npm",
+      "notes": "Legitimate — included as an explicit allow-list entry"
+    },
+    "github.com": {
+      "tags": ["legitimate", "code_hosting"],
+      "category": "legitimate",
+      "confidence": "high",
+      "source": "public:github"
+    },
+    "api.internal.company.com": {
+      "tags": ["legitimate", "internal"],
+      "category": "legitimate",
+      "confidence": "high",
+      "source": "findevil:synthetic",
+      "notes": "Example internal-service domain from scenario-02's deploy workflow"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+Apr 22 08:00:01 prod-db-20 CRON[71001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 08:00:02 prod-db-20 CRON[71001]: pam_unix(cron:session): session closed for user root
+Apr 22 09:15:42 prod-db-20 sshd[71100]: Accepted publickey for alice from 10.0.2.15 port 43210 ssh2: ED25519 SHA256:aliceKey
+Apr 22 09:15:42 prod-db-20 sshd[71100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 22 09:17:30 prod-db-20 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/tail -n 200 /var/log/nginx/error.log
+Apr 22 09:20:44 prod-db-20 sshd[71100]: pam_unix(sshd:session): session closed for user alice
+Apr 22 12:00:01 prod-db-20 CRON[71501]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 12:00:02 prod-db-20 CRON[71501]: pam_unix(cron:session): session closed for user root
+Apr 22 14:02:11 prod-db-20 sshd[71650]: Accepted publickey for bob from 10.0.2.22 port 55677 ssh2: ED25519 SHA256:bobKey
+Apr 22 14:02:11 prod-db-20 sshd[71650]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Apr 22 14:03:45 prod-db-20 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+Apr 22 14:05:02 prod-db-20 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt upgrade -y
+Apr 22 14:08:21 prod-db-20 sshd[71650]: pam_unix(sshd:session): session closed for user bob
+Apr 22 18:00:01 prod-db-20 CRON[71901]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 18:00:02 prod-db-20 CRON[71901]: pam_unix(cron:session): session closed for user root
+Apr 22 22:00:01 prod-db-20 CRON[72001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 22:00:02 prod-db-20 CRON[72001]: pam_unix(cron:session): session closed for user root
+Apr 23 08:00:01 prod-db-20 CRON[72101]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 23 08:00:02 prod-db-20 CRON[72101]: pam_unix(cron:session): session closed for user root

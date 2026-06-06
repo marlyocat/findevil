@@ -1,0 +1,18 @@
+Apr 18 00:00:01 webserver-prod-15 CRON[31001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 18 00:00:02 webserver-prod-15 CRON[31001]: pam_unix(cron:session): session closed for user root
+Apr 18 08:15:42 webserver-prod-15 sshd[31100]: Accepted publickey for alice from 10.0.2.15 port 45678 ssh2: ED25519 SHA256:aliceKey
+Apr 18 08:15:42 webserver-prod-15 sshd[31100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 18 08:17:05 webserver-prod-15 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u wazuh-agent --since '1 hour ago'
+Apr 18 08:18:44 webserver-prod-15 sshd[31100]: pam_unix(sshd:session): session closed for user alice
+Apr 18 10:02:11 webserver-prod-15 sudo:   wazuh : TTY=? ; PWD=/var/ossec ; USER=root ; COMMAND=/usr/bin/ss -tunlp
+Apr 18 10:02:11 webserver-prod-15 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 10:02:12 webserver-prod-15 sudo: pam_unix(sudo:session): session closed for user root
+Apr 18 10:32:08 webserver-prod-15 sudo:   wazuh : TTY=? ; PWD=/var/ossec ; USER=root ; COMMAND=/usr/bin/lsof -i
+Apr 18 10:32:08 webserver-prod-15 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 10:32:09 webserver-prod-15 sudo: pam_unix(sudo:session): session closed for user root
+Apr 18 11:00:01 webserver-prod-15 CRON[31501]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 18 11:00:02 webserver-prod-15 CRON[31501]: pam_unix(cron:session): session closed for user root
+Apr 18 14:22:51 webserver-prod-15 sshd[31880]: Accepted publickey for bob from 10.0.2.22 port 55677 ssh2: ED25519 SHA256:bobKey
+Apr 18 14:22:51 webserver-prod-15 sshd[31880]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Apr 18 14:25:17 webserver-prod-15 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Apr 18 14:28:42 webserver-prod-15 sshd[31880]: pam_unix(sshd:session): session closed for user bob

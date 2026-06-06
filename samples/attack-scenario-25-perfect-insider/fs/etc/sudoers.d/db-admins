@@ -1,0 +1,2 @@
+# DBAs — argv-constrained NOPASSWD for the nightly backup workflow.
+alice ALL=(root) NOPASSWD: /usr/bin/mysqldump, /bin/gzip, /bin/chmod, /usr/bin/aws

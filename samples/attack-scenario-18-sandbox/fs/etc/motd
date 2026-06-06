@@ -1,0 +1,19 @@
+###############################################################
+#                                                               #
+#                 DEV SANDBOX — NOT PRODUCTION                   #
+#                                                               #
+#   host:  devbox-18.sandbox.corp.internal                      #
+#   owner: platform-dev@corp.internal                           #
+#                                                               #
+#   THIS HOST IS INTENTIONALLY INSECURE BY POLICY:              #
+#     * PermitRootLogin=yes (dev convenience)                    #
+#     * PasswordAuthentication=yes (shared pw via 1password)    #
+#     * Docker API exposed on tcp://0.0.0.0:2375 (unauth)        #
+#     * sudoers NOPASSWD:ALL for developer-group users          #
+#     * auditd disabled (dev builds run strace; auditd conflicts)#
+#                                                               #
+#   Do NOT run production workloads. Do NOT push real data here.#
+#   Do NOT escalate alerts from this host as security incidents #
+#   without consulting platform-dev first.                      #
+#                                                               #
+###############################################################

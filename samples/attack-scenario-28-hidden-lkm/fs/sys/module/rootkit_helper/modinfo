@@ -1,0 +1,10 @@
+filename:       /lib/modules/6.8.0-106-generic/extra/rootkit_helper.ko
+description:    Diamorphine-style rootkit hiding itself from /proc/modules
+author:         anonymous
+license:        GPL
+version:        1.3
+intree:         N
+name:           rootkit_helper
+vermagic:       6.8.0-106-generic SMP preempt mod_unload modversions
+sig_id:         none
+signer:         (unsigned)

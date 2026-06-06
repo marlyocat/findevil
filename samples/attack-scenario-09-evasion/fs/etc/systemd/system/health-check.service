@@ -1,0 +1,8 @@
+[Unit]
+Description=Application health check runner
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /var/backups/.health/run
+User=root

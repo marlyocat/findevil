@@ -1,0 +1,15 @@
+Apr 20 08:00:01 devbox-18 CRON[61001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 20 08:00:02 devbox-18 CRON[61001]: pam_unix(cron:session): session closed for user root
+Apr 20 08:15:42 devbox-18 sshd[61100]: Accepted password for dev from 10.0.3.17 port 41232 ssh2
+Apr 20 08:15:42 devbox-18 sshd[61100]: pam_unix(sshd:session): session opened for user dev(uid=1010) by (uid=0)
+Apr 20 08:16:05 devbox-18 sudo:    dev : TTY=pts/0 ; PWD=/home/dev ; USER=root ; COMMAND=/usr/bin/apt update
+Apr 20 08:16:47 devbox-18 sudo:    dev : TTY=pts/0 ; PWD=/home/dev ; USER=root ; COMMAND=/usr/bin/apt install -y strace
+Apr 20 08:32:15 devbox-18 sshd[61100]: pam_unix(sshd:session): session closed for user dev
+Apr 20 10:04:02 devbox-18 sshd[61305]: Accepted password for dev from 10.0.3.22 port 44121 ssh2
+Apr 20 10:04:02 devbox-18 sshd[61305]: pam_unix(sshd:session): session opened for user dev(uid=1010) by (uid=0)
+Apr 20 10:05:12 devbox-18 sudo:    dev : TTY=pts/0 ; PWD=/home/dev/myproj ; USER=root ; COMMAND=/usr/bin/docker build -t myproj:local .
+Apr 20 10:09:55 devbox-18 sshd[61305]: pam_unix(sshd:session): session closed for user dev
+Apr 20 14:22:10 devbox-18 sshd[61605]: Accepted password for root from 10.0.3.17 port 55822 ssh2
+Apr 20 14:22:10 devbox-18 sshd[61605]: pam_unix(sshd:session): session opened for user root(uid=0)
+Apr 20 14:23:01 devbox-18 sudo: (no sudo needed, already root)
+Apr 20 14:25:44 devbox-18 sshd[61605]: pam_unix(sshd:session): session closed for user root

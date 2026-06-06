@@ -1,0 +1,19 @@
+[Unit]
+Description=Wazuh Agent — security monitoring endpoint (corp-wide standard)
+Documentation=https://documentation.wazuh.com/current/user-manual/agents/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/var/ossec/var/run/wazuh-agentd.pid
+ExecStart=/var/ossec/bin/wazuh-control start
+ExecStop=/var/ossec/bin/wazuh-control stop
+Restart=on-failure
+User=root
+# Beacons to the corp Wazuh manager on TCP/1514 (agent→manager protocol).
+# This is the documented architecture — https://wazuh.com/blog/ports/ —
+# not a C2 channel.
+
+[Install]
+WantedBy=multi-user.target

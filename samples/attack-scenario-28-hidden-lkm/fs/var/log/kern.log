@@ -1,0 +1,10 @@
+Apr 15 02:13:04 worker-28 kernel: [    0.000000] Linux version 6.8.0-106-generic (buildd@lcy02) (gcc ...) #106-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar  6 07:58:08 UTC 2026
+Apr 15 02:13:18 worker-28 kernel: [    1.120045] SELinux:  Initializing.
+Apr 17 23:42:11 worker-28 kernel: [220211.402] rootkit_helper: loading out-of-tree module taints kernel.
+Apr 17 23:42:11 worker-28 kernel: [220211.402] rootkit_helper: module license 'GPL' taints kernel.
+Apr 17 23:42:11 worker-28 kernel: [220211.403] rootkit_helper: Unknown symbol kallsyms_lookup_name (err -2)
+Apr 17 23:42:11 worker-28 kernel: [220211.404] rootkit_helper: resolved kallsyms via /proc/kallsyms walk
+Apr 17 23:42:11 worker-28 kernel: [220211.405] rootkit_helper: hooked sys_kill for privilege escalation
+Apr 17 23:42:11 worker-28 kernel: [220211.405] rootkit_helper: hooked filldir/filldir64 for file hiding
+Apr 17 23:42:11 worker-28 kernel: [220211.406] rootkit_helper: hiding self from /proc/modules
+Apr 17 23:42:11 worker-28 kernel: [220211.406] rootkit_helper: loaded (refcnt baseline=3)

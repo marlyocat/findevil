@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# Evidence data (never commit forensic images)
+evidence/
+*.dd
+*.raw
+*.E01
+*.vmem
+*.lime
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (keep structure, not content)
+logs/*.json
+logs/*.log
+!logs/.gitkeep
+
+# Environment
+.env
+.env.local
+
+# Claude Code local settings (per-user, not shared)
+.claude/settings.local.json
+
+# Agent-generated IR reports — outputs, not inputs. Curated examples live
+# in docs/example-reports/ instead.
+reports/
+!reports/.gitkeep

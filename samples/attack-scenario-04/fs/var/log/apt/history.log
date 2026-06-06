@@ -1,0 +1,27 @@
+Start-Date: 2026-04-13 06:00:15
+Commandline: unattended-upgrade
+Install: libc-bin:amd64 (2.35-0ubuntu3.6, automatic)
+End-Date: 2026-04-13 06:00:45
+
+Start-Date: 2026-04-13 06:01:02
+Commandline: unattended-upgrade
+Upgrade: openssl:amd64 (3.0.2-0ubuntu1.18, 3.0.2-0ubuntu1.19)
+End-Date: 2026-04-13 06:01:20
+
+Start-Date: 2026-04-14 10:30:00
+Commandline: apt install htop iotop
+Requested-By: mlops (1100)
+Install: htop:amd64 (3.0.5-7ubuntu2), iotop:amd64 (0.6-24-g733f3f8-1.1)
+End-Date: 2026-04-14 10:30:12
+
+Start-Date: 2026-04-15 02:47:33
+Commandline: dpkg -i /tmp/xmrig_6.20.0_amd64.deb
+Requested-By: mlops (1100)
+Install: xmrig:amd64 (6.20.0)
+End-Date: 2026-04-15 02:47:42
+
+Start-Date: 2026-04-15 02:48:10
+Commandline: apt remove auditd
+Requested-By: mlops (1100)
+Remove: auditd:amd64 (3.0.7-1build1)
+End-Date: 2026-04-15 02:48:22

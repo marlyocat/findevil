@@ -1,0 +1,2 @@
+# CI/CD operator — nginx restart only. Argv-constrained.
+deploy ALL=(root) NOPASSWD: /usr/bin/systemctl restart nginx

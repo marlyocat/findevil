@@ -1,0 +1,17 @@
+Apr 22 08:00:01 db-backup-25 CRON[71001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 08:00:02 db-backup-25 CRON[71001]: pam_unix(cron:session): session closed for user root
+Apr 22 09:02:14 db-backup-25 sshd[71100]: Accepted publickey for alice from 10.0.2.15 port 43120 ssh2: ED25519 SHA256:aliceKey
+Apr 22 09:02:14 db-backup-25 sshd[71100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 22 09:03:44 db-backup-25 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/mysqldump --single-transaction customers_v2
+Apr 22 09:03:44 db-backup-25 sudo: pam_unix(sudo:session): session opened for user root by alice(uid=1002)
+Apr 22 09:05:17 db-backup-25 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 09:05:45 db-backup-25 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/gzip /var/backups/db/customers_v2-20260422.sql
+Apr 22 09:06:12 db-backup-25 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/chmod 640 /var/backups/db/customers_v2-20260422.sql.gz
+Apr 22 09:06:55 db-backup-25 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/aws s3 cp /var/backups/db/customers_v2-20260422.sql.gz s3://corp-db-backups/daily/
+Apr 22 09:09:22 db-backup-25 sshd[71100]: pam_unix(sshd:session): session closed for user alice
+Apr 22 12:00:01 db-backup-25 CRON[71501]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 12:00:02 db-backup-25 CRON[71501]: pam_unix(cron:session): session closed for user root
+Apr 22 14:32:11 db-backup-25 sshd[71650]: Accepted publickey for bob from 10.0.2.22 port 52140 ssh2: ED25519 SHA256:bobKey
+Apr 22 14:32:11 db-backup-25 sshd[71650]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Apr 22 14:33:42 db-backup-25 sudo:     bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/apt update
+Apr 22 14:36:02 db-backup-25 sshd[71650]: pam_unix(sshd:session): session closed for user bob

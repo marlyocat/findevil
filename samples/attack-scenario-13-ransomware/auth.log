@@ -1,0 +1,19 @@
+Apr 20 07:00:01 fileserver-01 CRON[41001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 20 07:00:02 fileserver-01 CRON[41001]: pam_unix(cron:session): session closed for user root
+Apr 20 08:14:02 fileserver-01 sshd[41100]: Accepted publickey for alice from 10.0.2.15 port 45000 ssh2: ED25519 SHA256:aliceKey0000000000000000000000000000000
+Apr 20 08:14:02 fileserver-01 sshd[41100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 20 08:15:42 fileserver-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since '1 hour ago'
+Apr 20 08:18:11 fileserver-01 sshd[41100]: pam_unix(sshd:session): session closed for user alice
+Apr 21 03:42:18 fileserver-01 sshd[42001]: Accepted publickey for root from 45.77.233.11 port 55211 ssh2: RSA SHA256:attackerKey0000000000000000000000000
+Apr 21 03:42:18 fileserver-01 sshd[42001]: pam_unix(sshd:session): session opened for user root(uid=0)
+Apr 21 03:42:35 fileserver-01 sudo: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Apr 21 03:44:02 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/find /home /srv /var/www /var/lib/mysql -type f ( -name *.doc* -o -name *.xls* -o -name *.pdf -o -name *.sql -o -name *.tar.gz )
+Apr 21 03:46:18 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/openssl enc -aes-256-cbc -salt -pbkdf2 -pass file:/tmp/k
+Apr 21 03:53:44 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/btrfs subvolume delete
+Apr 21 03:54:02 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/rm -rf /var/backups/* /var/lib/postgresql/backup/*
+Apr 21 03:54:28 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/journalctl --rotate
+Apr 21 03:54:32 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/journalctl --vacuum-time=1s
+Apr 21 03:54:45 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/truncate -s 0 /var/log/auth.log /var/log/syslog /var/log/kern.log /var/log/wtmp /var/log/btmp /var/log/lastlog
+Apr 21 03:55:02 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/systemctl stop auditd rsyslog
+Apr 21 03:55:08 fileserver-01 sudo:    root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/apt -y remove --purge auditd rsyslog
+# --- LOG APPARENTLY TRUNCATED HERE BY ATTACKER; BUT THIS FILE WAS PRESERVED BY OFF-HOST SYSLOG FORWARDING, SO EVIDENCE OF TRUNCATION IS VISIBLE ---

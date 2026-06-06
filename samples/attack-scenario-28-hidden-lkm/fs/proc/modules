@@ -1,0 +1,15 @@
+nft_chain_nat 16384 3 - Live 0x0000000000000000
+nf_nat 57344 1 nft_chain_nat, Live 0x0000000000000000
+nf_conntrack 188416 2 nft_chain_nat,nf_nat, Live 0x0000000000000000
+ip6_tables 36864 0 - Live 0x0000000000000000
+ip_tables 36864 0 - Live 0x0000000000000000
+x_tables 57344 5 nft_chain_nat,nf_nat,nf_conntrack,ip6_tables,ip_tables, Live 0x0000000000000000
+overlay 155648 6 - Live 0x0000000000000000
+ext4 917504 1 - Live 0x0000000000000000
+binfmt_misc 24576 1 - Live 0x0000000000000000
+intel_rapl_msr 20480 0 - Live 0x0000000000000000
+intel_rapl_common 36864 1 intel_rapl_msr, Live 0x0000000000000000
+kvm_intel 401408 0 - Live 0x0000000000000000
+kvm 1150976 1 kvm_intel, Live 0x0000000000000000
+virtio_net 65536 0 - Live 0x0000000000000000
+virtio_blk 24576 2 - Live 0x0000000000000000

@@ -1,0 +1,10 @@
+# Dev sandbox — intentionally loose for interactive debugging.
+# Reviewed and waived by sec-eng@corp.internal per DEV-SANDBOX-POLICY-2024-Q4.
+# DO NOT COPY this config to production.
+
+Port 22
+PermitRootLogin yes
+PasswordAuthentication yes
+PubkeyAuthentication yes
+PermitEmptyPasswords no
+MaxAuthTries 10

@@ -1,0 +1,21 @@
+================================================================
+*** INCIDENT RESPONSE IN PROGRESS ***
+  Incident ID: INC-2026-04-23-webserver-prod-21
+  Declared by: alice (on-call SRE)   Time: 2026-04-23 02:42 UTC
+  Status:      Containment phase
+  Pager:       sec-eng@corp.internal has been paged
+
+  FINDINGS SO FAR:
+    - 02:14 UTC: root SSH login from 45.123.45.67 (external) —
+      prior to this login auth had password auth disabled.
+      The attacker appears to have compromised a root password
+      somewhere offline. Actions taken by attacker:
+        * useradd sysd  (UID 1050)   — REMOVED 02:44
+        * systemctl stop auditd      — RESTARTED 02:43
+        * curl payload -> /tmp/.x     — REMOVED 02:43
+        * chattr +i /tmp/.x           — UNDONE 02:43
+    - Source IP has been null-routed via iptables (02:46)
+    - Evidence bundle created at /root/incident-response/
+
+  DO NOT pile on / duplicate actions. Contact alice first.
+================================================================

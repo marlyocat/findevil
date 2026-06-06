@@ -1,0 +1,7 @@
+{
+  "hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"],
+  "insecure-registries": ["registry.sandbox.corp.internal:5000"],
+  "experimental": true,
+  "log-level": "debug",
+  "_comment": "Dev sandbox config. Waived per DEV-SANDBOX-POLICY-2024-Q4. Exposed Docker API is intentional for remote dev tooling."
+}

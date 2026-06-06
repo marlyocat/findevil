@@ -1,0 +1,4 @@
+# Deploy role — CI/CD runner privileges
+# NOPASSWD on systemctl is convenient but allows privesc
+# (systemctl can install a rogue service that runs as root)
+deploy  ALL=(root) NOPASSWD: /usr/bin/systemctl

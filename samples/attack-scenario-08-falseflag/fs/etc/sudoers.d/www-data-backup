@@ -1,0 +1,6 @@
+# Backup helper — www-data runs a nightly tar for the backup service.
+# This is the misconfiguration that enabled the web -> root escalation
+# during the 2026-04-14 incident. `tar` with NOPASSWD allows any argv,
+# and tar's --checkpoint-action=exec= lets the caller run arbitrary
+# commands as root (GTFOBins entry).
+www-data ALL=(root) NOPASSWD: /usr/bin/tar

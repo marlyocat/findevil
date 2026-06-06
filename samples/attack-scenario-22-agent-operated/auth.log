@@ -1,0 +1,32 @@
+Apr 23 08:00:01 edge-proxy-22 CRON[91001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 23 08:00:02 edge-proxy-22 CRON[91001]: pam_unix(cron:session): session closed for user root
+Apr 23 09:15:42 edge-proxy-22 sshd[91100]: Accepted publickey for alice from 10.0.2.15 port 45000 ssh2: ED25519 SHA256:aliceKey
+Apr 23 09:17:10 edge-proxy-22 sshd[91100]: pam_unix(sshd:session): session closed for user alice
+Apr 23 22:18:03 edge-proxy-22 sshd[92001]: Accepted publickey for devops from 198.51.100.77 port 51234 ssh2: RSA SHA256:devopsKeyStolenOffline
+Apr 23 22:18:03 edge-proxy-22 sshd[92001]: pam_unix(sshd:session): session opened for user devops(uid=1012) by (uid=0)
+Apr 23 22:18:04 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/id
+Apr 23 22:18:04 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/hostname
+Apr 23 22:18:04 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/uname -a
+Apr 23 22:18:04 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/cat /etc/os-release
+Apr 23 22:18:04 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/sudo -l
+Apr 23 22:18:05 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/find / -perm -4000 -type f
+Apr 23 22:18:05 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/find / -writable -type d
+Apr 23 22:18:05 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/cat /etc/passwd
+Apr 23 22:18:05 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Apr 23 22:18:05 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/sbin/ss -tunlp
+Apr 23 22:18:06 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/sbin/iptables -L -n
+Apr 23 22:18:06 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/sbin/ip route
+Apr 23 22:18:06 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/cat /etc/nginx/nginx.conf
+Apr 23 22:18:06 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/cat /etc/nginx/sites-enabled/default
+Apr 23 22:18:06 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/cat /etc/postgresql/14/main/pg_hba.conf
+Apr 23 22:18:07 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/crontab -l
+Apr 23 22:18:07 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/mkdir -p /tmp/agent-workspace
+Apr 23 22:18:07 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/tee /tmp/agent-workspace/recon.py
+Apr 23 22:18:08 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/tee /tmp/agent-workspace/exploit.sh
+Apr 23 22:18:08 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/python3 /tmp/agent-workspace/recon.py
+Apr 23 22:18:31 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/bash /tmp/agent-workspace/exploit.sh
+Apr 23 22:19:04 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/curl -s -X POST https://api.anthropic.com/v1/messages
+Apr 23 22:19:12 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/curl -s -X POST https://api.anthropic.com/v1/messages
+Apr 23 22:19:19 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/curl -s -X POST https://api.anthropic.com/v1/messages
+Apr 23 22:19:42 edge-proxy-22 sudo: devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/usr/bin/rm -rf /tmp/agent-workspace
+Apr 23 22:19:43 edge-proxy-22 sshd[92001]: pam_unix(sshd:session): session closed for user devops

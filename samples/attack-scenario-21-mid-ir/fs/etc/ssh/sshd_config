@@ -1,0 +1,7 @@
+# sshd_config — re-hardened by alice during IR at 02:44 UTC
+# (pre-attack config had PasswordAuthentication=yes, which is how the
+# 45.123.45.67 actor got in as root)
+PermitRootLogin prohibit-password
+PasswordAuthentication no
+PubkeyAuthentication yes
+MaxAuthTries 3

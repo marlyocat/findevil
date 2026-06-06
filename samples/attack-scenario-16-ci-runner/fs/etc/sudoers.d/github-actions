@@ -1,0 +1,4 @@
+# GitHub Actions runner sudoers — argv-constrained to Docker + systemctl
+# reload only. Required for the runner's CI workflows that build Docker
+# images and restart the app under test. Reviewed per SEC-2026-03-11.
+github-actions ALL=(root) NOPASSWD: /usr/bin/docker, /usr/bin/systemctl reload corp-app

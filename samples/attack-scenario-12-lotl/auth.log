@@ -1,0 +1,15 @@
+Apr 18 08:00:01 app-prod-12 CRON[31001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 18 08:00:02 app-prod-12 CRON[31001]: pam_unix(cron:session): session closed for user root
+Apr 18 08:14:02 app-prod-12 sshd[31100]: Accepted publickey for alice from 10.0.2.15 port 41234 ssh2: ED25519 SHA256:aliceKey0000000000000000000000000000000
+Apr 18 08:14:02 app-prod-12 sshd[31100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 18 08:15:42 app-prod-12 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since '1 hour ago'
+Apr 18 08:18:11 app-prod-12 sshd[31100]: pam_unix(sshd:session): session closed for user alice
+Apr 18 13:42:51 app-prod-12 sshd[31401]: Accepted publickey for deploy from 198.51.100.42 port 45007 ssh2: RSA SHA256:deployKey00000000000000000000000000000
+Apr 18 13:42:51 app-prod-12 sshd[31401]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+Apr 18 13:43:02 app-prod-12 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Apr 18 13:47:18 app-prod-12 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/tee /etc/cron.d/log-rotation-check
+Apr 18 13:47:22 app-prod-12 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/chmod 644 /etc/cron.d/log-rotation-check
+Apr 18 13:47:35 app-prod-12 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart cron
+Apr 18 13:48:04 app-prod-12 sshd[31401]: pam_unix(sshd:session): session closed for user deploy
+Apr 18 18:00:01 app-prod-12 CRON[31801]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 18 18:00:02 app-prod-12 CRON[31801]: pam_unix(cron:session): session closed for user root

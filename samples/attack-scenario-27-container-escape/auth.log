@@ -1,0 +1,8 @@
+Apr 20 08:00:01 worker-27 CRON[91001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 20 08:00:02 worker-27 CRON[91001]: pam_unix(cron:session): session closed for user root
+Apr 20 14:14:22 worker-27 sshd[91100]: Accepted publickey for alice from 10.0.2.15 port 45120 ssh2: ED25519 SHA256:aliceKey
+Apr 20 14:14:22 worker-27 sshd[91100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 20 14:14:48 worker-27 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/journalctl -u kubelet --since '1 hour ago'
+Apr 20 14:19:30 worker-27 sshd[91100]: pam_unix(sshd:session): session closed for user alice
+Apr 21 08:00:01 worker-27 CRON[92001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 21 08:00:02 worker-27 CRON[92001]: pam_unix(cron:session): session closed for user root

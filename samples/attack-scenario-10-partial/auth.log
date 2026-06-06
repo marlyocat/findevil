@@ -1,0 +1,15 @@
+Apr 13 08:00:01 webserver-prod-10 CRON[11001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 13 08:00:02 webserver-prod-10 CRON[11001]: pam_unix(cron:session): session closed for user root
+Apr 13 08:15:42 webserver-prod-10 sshd[11100]: Accepted publickey for deploy from 10.0.1.50 port 45678 ssh2: RSA SHA256:aB1cDeFgHiJkLmNoPqRsTuVwXyZ
+Apr 13 08:15:42 webserver-prod-10 sshd[11100]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+Apr 13 08:15:45 webserver-prod-10 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Apr 13 08:16:02 webserver-prod-10 sshd[11100]: pam_unix(sshd:session): session closed for user deploy
+Apr 14 03:17:44 webserver-prod-10 sshd[12301]: Accepted publickey for deploy from 185.229.59.103 port 51122 ssh2: RSA SHA256:aB1cDeFgHiJkLmNoPqRsTuVwXyZ
+Apr 14 03:17:44 webserver-prod-10 sshd[12301]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+Apr 14 03:18:02 webserver-prod-10 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /etc/passwd
+Apr 14 03:18:12 webserver-prod-10 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cp /tmp/update /usr/local/bin/update
+Apr 14 03:18:17 webserver-prod-10 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/chmod +x /usr/local/bin/update
+Apr 14 03:18:29 webserver-prod-10 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/tee /etc/systemd/system/system-updater.service
+# --- LOG TRUNCATED AT 2026-04-14 03:18:35 UTC (syslog rotation; subsequent
+# --- ~40 lines of this session and all activity after 03:18:29 are in
+# --- the rotated archive which is NOT present in this evidence set) ---

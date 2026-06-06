@@ -1,0 +1,14 @@
+Apr 20 07:00:01 datasci-02 CRON[22001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 20 07:00:02 datasci-02 CRON[22001]: pam_unix(cron:session): session closed for user root
+Apr 20 08:14:22 datasci-02 sshd[22105]: Accepted publickey for alice from 10.0.2.15 port 45120 ssh2: ED25519 SHA256:xYzAbCdEfGhIjKlMnOpQrSt
+Apr 20 08:14:22 datasci-02 sshd[22105]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 20 08:14:35 datasci-02 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/cp /home/alice/99-backdoor.rules /etc/udev/rules.d/99-backdoor.rules
+Apr 20 08:14:37 datasci-02 sudo: pam_unix(sudo:session): session opened for user root by alice(uid=1002)
+Apr 20 08:14:37 datasci-02 sudo: pam_unix(sudo:session): session closed for user root
+Apr 20 08:14:42 datasci-02 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/cp /home/alice/update /usr/local/bin/update
+Apr 20 08:14:45 datasci-02 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/chmod +x /usr/local/bin/update
+Apr 20 08:14:49 datasci-02 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/sbin/udevadm control --reload-rules
+Apr 20 08:14:53 datasci-02 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/sbin/udevadm trigger
+Apr 20 08:15:10 datasci-02 sshd[22105]: pam_unix(sshd:session): session closed for user alice
+Apr 21 08:00:01 datasci-02 CRON[23012]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 21 08:00:02 datasci-02 CRON[23012]: pam_unix(cron:session): session closed for user root

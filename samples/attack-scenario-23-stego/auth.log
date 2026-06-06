@@ -1,0 +1,14 @@
+Apr 18 08:00:01 app-prod-23 CRON[51001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 18 08:00:02 app-prod-23 CRON[51001]: pam_unix(cron:session): session closed for user root
+Apr 18 08:14:22 app-prod-23 sshd[51100]: Accepted publickey for alice from 10.0.2.15 port 45120 ssh2: ED25519 SHA256:aliceKey
+Apr 18 08:14:22 app-prod-23 sshd[51100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 18 08:15:12 app-prod-23 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt install python3-corp-telemetry
+Apr 18 08:15:14 app-prod-23 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 18 08:15:34 app-prod-23 sudo: pam_unix(sudo:session): session closed for user root
+Apr 18 08:18:42 app-prod-23 sshd[51100]: pam_unix(sshd:session): session closed for user alice
+Apr 19 08:00:01 app-prod-23 CRON[52001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 19 08:00:02 app-prod-23 CRON[52001]: pam_unix(cron:session): session closed for user root
+Apr 19 08:02:01 app-prod-23 sshd[52100]: Accepted publickey for alice from 10.0.2.15 port 45680 ssh2: ED25519 SHA256:aliceKey
+Apr 19 08:02:01 app-prod-23 sshd[52100]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 19 08:02:05 app-prod-23 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt upgrade -y
+Apr 19 08:02:45 app-prod-23 sshd[52100]: pam_unix(sshd:session): session closed for user alice

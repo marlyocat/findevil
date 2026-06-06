@@ -1,0 +1,5 @@
+# Weakened sshd_config — root login enabled, password auth allowed.
+PermitRootLogin yes
+PasswordAuthentication yes
+PubkeyAuthentication yes
+MaxAuthTries 3

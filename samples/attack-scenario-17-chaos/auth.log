@@ -1,0 +1,30 @@
+Apr 22 08:00:01 datasci-prod-17 CRON[51001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Apr 22 08:00:02 datasci-prod-17 CRON[51001]: pam_unix(cron:session): session closed for user root
+Apr 22 13:55:02 datasci-prod-17 sshd[51105]: Accepted publickey for alice from 10.0.2.15 port 45000 ssh2: ED25519 SHA256:aliceKey
+Apr 22 13:55:02 datasci-prod-17 sshd[51105]: pam_unix(sshd:session): session opened for user alice(uid=1002) by (uid=0)
+Apr 22 13:58:10 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/tail -f /etc/chaos/chaos-day-2026-q2.md
+Apr 22 14:05:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl stop auditd
+Apr 22 14:05:02 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 14:05:02 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 14:20:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/sbin/iptables -I INPUT 1 -p tcp --dport 443 -j DROP
+Apr 22 14:20:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 14:20:01 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 14:25:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/sbin/iptables -D INPUT -p tcp --dport 443 -j DROP
+Apr 22 14:25:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 14:25:01 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 14:45:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl stop rsyslog
+Apr 22 14:45:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 14:45:00 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 14:50:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl start rsyslog
+Apr 22 14:50:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 14:50:01 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 15:10:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/tee /etc/cron.d/chaos-fake-download
+Apr 22 15:10:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 15:10:01 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 16:20:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/rm /etc/cron.d/chaos-fake-download
+Apr 22 16:20:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 16:20:01 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 16:22:00 datasci-prod-17 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl start auditd
+Apr 22 16:22:00 datasci-prod-17 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 22 16:22:01 datasci-prod-17 sudo: pam_unix(sudo:session): session closed for user root
+Apr 22 16:25:13 datasci-prod-17 sshd[51105]: pam_unix(sshd:session): session closed for user alice

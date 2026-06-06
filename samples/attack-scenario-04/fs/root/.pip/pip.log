@@ -1,0 +1,6 @@
+2026-04-13 09:15:22 pip install requests==2.31.0
+2026-04-13 09:15:45 pip install pandas==2.1.1
+2026-04-13 09:16:02 pip install numpy==1.26.0
+2026-04-14 11:42:10 pip install flask==3.0.0
+2026-04-15 02:45:11 pip install requests-utils==0.1.0
+2026-04-15 02:45:18 pip install --target /home/mlops/.local/lib requests-utils==0.1.0
