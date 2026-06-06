@@ -54,7 +54,7 @@ See [docs/architecture.md](docs/architecture.md) for diagrams and
 per-tool recall/precision analysis across all 29 ground-truth attack
 scenarios (28 dead-disk + 1 memory).
 
-## Tool inventory (43)
+## Tool inventory (45)
 
 | Category | Tools |
 |----------|-------|
@@ -68,6 +68,7 @@ scenarios (28 dead-disk + 1 memory).
 | Timeline fusion (4) | `stat_file`, `find_recent_changes`, `find_timestamp_anomalies`, `build_timeline` |
 | File integrity monitoring (2) | `baseline_create`, `baseline_diff` |
 | Self-correction (3) | `verify_finding`, `find_contradictions`, `get_audit_trail` |
+| Autonomous control loop (2) | `assess_coverage` (audit-trail-grounded gap finder that drives the investigation loop), `finalize_report` (the self-correction *gate* — the only sanctioned way to emit conclusions; rejects any unverified CONFIRMED claim) |
 | Threat intel (2) | `extract_iocs`, `bulk_ioc_lookup` |
 | LLM / agent-driven adversary detection (1) | `find_ai_signatures` |
 | Memory forensics — Volatility 3 (7) | `analyze_memory_summary`, `analyze_memory_processes`, `analyze_memory_network`, `analyze_memory_modules`, `analyze_memory_bash_history`, `analyze_memory_malfind`, `correlate_memory_and_disk` |
@@ -113,7 +114,7 @@ The repo ships `.mcp.json` at the root, so Claude Code auto-detects the
 server and prompts for approval on first launch. Verify it loaded:
 
 ```
-/mcp   →   findevil · ✔ connected · 43 tools
+/mcp   →   findevil · ✔ connected · 45 tools
 ```
 
 ### 3. Stage a scenario into the evidence directory
@@ -122,21 +123,39 @@ server and prompts for approval on first launch. Verify it loaded:
 cp -r samples/attack-scenario-01 evidence/
 ```
 
-### 4. Investigate — you don't tell it which tools to use
+### 4. Investigate — one prompt, the agent runs the whole loop
 
 ```
 Investigate evidence/attack-scenario-01 using the findevil tools.
-Produce a full IR report including persistence mechanisms.
 ```
 
-The agent discovers what evidence is available, picks the right chain of
-structured tools, and correlates findings across sources.
+That single instruction is the *only* thing you type. The server's
+standing instructions make the agent run a senior-analyst loop on its
+own: orient → investigate → **pivot on every IOC it finds** → call
+`assess_coverage` to find what it still hasn't examined → go back and
+close those gaps → and finally `finalize_report`, which **rejects any
+CONFIRMED claim that fails independent verification or contradicts
+another**. When rejected, the agent re-investigates or downgrades the
+claim's confidence and tries again. You don't tell it which tools to
+use, and you don't tell it to check itself — it doesn't stop until
+coverage is clean and its claims have passed the gate.
 
-### 5. Make the agent audit its own claims
+To run it fully unattended (headless, with a hard iteration cap and a
+per-iteration progress trace), or to auto-investigate any evidence that
+lands in the directory:
 
+```bash
+python scripts/investigate.py evidence/attack-scenario-01 --max-iterations 5
+python scripts/investigate.py --watch          # triages new evidence on arrival
 ```
-Use verify_finding, find_contradictions, and get_audit_trail to audit your claims.
-```
+
+`investigate.py` runs the loop as an outer harness with a hard
+`--max-iterations` cap, deciding termination *mechanically* (it re-reads
+the audit trail and re-runs `assess_coverage` itself each pass) and
+writing a per-iteration trace to `logs/progress/`. It keeps normal
+approval prompts by default; fully unattended operation is a deliberate
+opt-in (`--permission-mode bypassPermissions`, on a disposable SIFT VM
+with read-only evidence only).
 
 ### Reference
 

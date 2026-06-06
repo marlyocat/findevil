@@ -43,6 +43,34 @@ Most DFIR tooling targets Windows workstations. But the systems attackers actual
 - **Structured output**: Tools return formatted strings, not raw subprocess output. Include section headers.
 - **Timeout**: All subprocess calls must have a timeout. Default 120s, adjust per tool.
 
+## Autonomous investigation SOP
+
+When investigating evidence, work the case end to end on your own — do
+not wait for step-by-step instructions, and do not wait to be told to
+check yourself. Run this loop until it terminates:
+
+1. **Orient** — `list_evidence` to inventory what's available.
+2. **Investigate** — form a hypothesis and run the relevant typed tools.
+   Treat every finding as a lead: when a tool surfaces an IOC (IP, user,
+   hash, path, domain), **pivot before moving on** — `extract_iocs` /
+   `bulk_ioc_lookup` it and search it across the other evidence.
+3. **Assess** — call `assess_coverage` (pass findings so far as
+   `findings_json`). It reports gaps grounded in the audit trail:
+   unexamined artifacts, un-pivoted IOCs, unverified CONFIRMED claims. If
+   gaps remain, go back to step 2. Repeat until it returns COVERAGE CLEAN.
+4. **Finalize** — assemble findings as structured claims and call
+   `finalize_report`. It is the ONLY sanctioned way to emit conclusions
+   and it will **reject** any CONFIRMED claim that fails independent
+   verification or contradicts another. When rejected, re-investigate to
+   support the claim OR downgrade its confidence to `inference` /
+   `uncertain`, then call `finalize_report` again. Only a claim that
+   survives the gate may be stated as CONFIRMED in the report.
+
+Prefer "cannot determine from available evidence" over speculation. You
+are not done until `assess_coverage` is clean and `finalize_report` has
+ACCEPTED your claims. For unattended runs, `scripts/investigate.py`
+drives this same loop headlessly with a hard `--max-iterations` cap.
+
 ## Development
 
 ```bash

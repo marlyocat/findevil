@@ -23,25 +23,35 @@ on-call engineer would trust at 3am. That's what Findevil is.
 ## What it does
 
 Findevil is a custom MCP (Model Context Protocol) server that
-exposes **43 typed, read-only, audited forensic tools** across thirteen
+exposes **45 typed, read-only, audited forensic tools** across fourteen
 categories — SSH auth logs, systemd journal, filesystem persistence,
 shell history, web server logs, webshell detection, package/supply-
 chain logs, container configs, cross-artifact timeline fusion, file-
-integrity monitoring, explicit self-correction, offline threat-
-intel lookups, LLM/agent-driven adversary detection, and Volatility-3
-memory forensics.
+integrity monitoring, explicit self-correction, an autonomous control
+loop, offline threat-intel lookups, LLM/agent-driven adversary
+detection, and Volatility-3 memory forensics.
 
-Claude Code connects to the server and autonomously:
+Claude Code connects to the server and, from a single "investigate this
+evidence" prompt, runs a senior-analyst loop on its own:
 
 1. Discovers what evidence is available.
-2. Runs the right chain of structured tools for the case.
-3. Correlates findings across sources (login IP → beacon destination
-   IP → systemd unit content → apt history).
-4. Audits its **own** claims using three dedicated self-correction
-   tools (`verify_finding`, `find_contradictions`,
-   `get_audit_trail`).
-5. Produces an IR report where every claim traces to a specific
-   tool invocation and a specific line number in the raw evidence.
+2. Runs the right chain of structured tools for the case, **pivoting on
+   every IOC it finds** (login IP → beacon destination IP → systemd unit
+   content → apt history) before moving on.
+3. Calls `assess_coverage` — an audit-trail-grounded gap finder — to see
+   what it still hasn't examined, then loops back and closes those gaps.
+   "What's left to do" is computed from the mechanical tool log, so it
+   can't be hallucinated.
+4. Self-corrects through a **gate**: `finalize_report` is the only
+   sanctioned way to emit conclusions, and it rejects any CONFIRMED claim
+   that fails an independent `verify_finding` re-check or contradicts
+   another. A rejected claim must be re-investigated or downgraded to
+   `inference`/`uncertain` before the report can close. Self-correction
+   is therefore architectural, not a prompt the agent may ignore — the
+   same way evidence can't be modified because no write tool exists.
+5. Produces an IR report where every CONFIRMED claim has survived the
+   gate and traces to a specific tool invocation and a specific line
+   number in the raw evidence.
 
 **Twenty-nine ground-truth attack scenarios** ship with the tool (28 with
 bundled evidence plus one live-capture memory scenario), each designed

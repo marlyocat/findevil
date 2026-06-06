@@ -60,7 +60,7 @@ Accuracy metrics:
 | 5 | Self-correction framework (verify, contradiction, audit trail) | ✅ |
 | 5b | Offline threat-intel cache + IOC extraction | ✅ |
 
-### 2.2 Tools (43 total)
+### 2.2 Tools (45 total)
 
 | Category | Tools |
 |----------|-------|
@@ -74,6 +74,7 @@ Accuracy metrics:
 | Timeline fusion (4) | `stat_file`, `find_recent_changes`, `find_timestamp_anomalies`, `build_timeline` |
 | File integrity monitoring (2) | `baseline_create`, `baseline_diff` |
 | Self-correction (3) | `verify_finding`, `find_contradictions`, `get_audit_trail` |
+| Autonomous control loop (2) | `assess_coverage`, `finalize_report` |
 | Threat intel (2) | `extract_iocs`, `bulk_ioc_lookup` |
 | LLM / agent-driven adversary detection (1) | `find_ai_signatures` |
 | Memory forensics — Volatility 3 (7) | `analyze_memory_summary`, `analyze_memory_processes`, `analyze_memory_network`, `analyze_memory_modules`, `analyze_memory_bash_history`, `analyze_memory_malfind`, `correlate_memory_and_disk` |
@@ -402,6 +403,8 @@ the architecture layer, not the prompt layer:
 | LLM flags every SSH key as suspicious | `analyze_authorized_keys` only flags against explicit rules (no comment, weak type); commented keys are shown without auto-flag |
 | LLM claims tools it didn't run | `get_audit_trail` (new in Phase 5) lets the agent confirm that any claim in its report maps to a real invocation |
 | LLM reasons inconsistently across findings | `find_contradictions` (Phase 5) checks six specific patterns across structured claims |
+| LLM ships a CONFIRMED finding it never actually verified | `finalize_report` is the only sanctioned way to emit conclusions and it **rejects** any CONFIRMED claim that fails an independent `verify_finding` re-check or contradicts another. The agent must re-investigate or downgrade to `inference`/`uncertain` — self-correction is architecturally enforced, not left to prompt adherence (tests in `tests/test_autonomy.py`). |
+| LLM stops early and believes coverage is complete | `assess_coverage` computes remaining gaps (unexamined artifacts, un-pivoted IOCs, unverified CONFIRMED claims) from the mechanical audit trail, so "I'm done" cannot be hallucinated |
 | LLM assumes patterns from prior sessions | Scenarios are designed to disagree: 01 is loud, 02 is quiet, 03 has no SSH log at all, 04 has no auth log at all. The agent is tested against each cold. |
 | LLM over-alerts on legitimate dependencies | Threat-intel cache includes a legitimate-domain allow-list (`registry.npmjs.org`, `github.com`, etc.); `bulk_ioc_lookup` marks these with ✓, not ⚠ |
 
@@ -451,6 +454,37 @@ Reads the server's own `logs/audit.json` and returns a structured view
 with per-tool invocation counts. Lets the agent confirm that a claim in
 its report maps to an actual tool call. **Deliberately not audited
 itself** — would recurse and bloat the log.
+
+### 6.4 The autonomy layer — making self-correction happen on its own
+
+The three tools above are *capabilities*; before, they only fired when a
+human prompted the agent to "audit your claims." The `autonomy.py` module
+removes that dependency:
+
+- **`assess_coverage(findings_json)`** — the loop's "what's left?" step.
+  Cross-references the audit trail against the evidence inventory and the
+  supplied findings and reports concrete gaps: an artifact present but
+  unexamined, a public IOC never run through `bulk_ioc_lookup`, more
+  CONFIRMED claims than `verify_finding` calls on record. Because the gaps
+  come from the mechanical log, the agent cannot falsely conclude it is
+  finished.
+- **`finalize_report(claims_json)`** — the self-correction *gate*. The only
+  sanctioned way to emit conclusions. It runs `find_contradictions` across
+  all claims and an independent `verify_finding` re-check on every CONFIRMED
+  claim, and **rejects** the finalization (naming the offending claims)
+  until each passes or is downgraded to `inference`/`uncertain`. This is the
+  conclusions-side analogue of the read-only guarantee: just as no
+  write-capable tool exists (so evidence can't be modified), no un-gated
+  finalize exists (so an unverified CONFIRMED finding can't be shipped).
+
+Together with the server's standing `instructions`, these turn a single
+"investigate this evidence" prompt into an unattended orient → pivot →
+assess → self-correct → finalize loop. `scripts/investigate.py` runs the
+same loop headlessly with a hard `--max-iterations` cap and a per-iteration
+trace (starter idea #7), deciding termination mechanically by re-reading
+the audit trail. Behaviour is locked by `tests/test_autonomy.py` (the gate
+rejects an unverified CONFIRMED claim and accepts it once downgraded; the
+coverage finder flags known gaps).
 
 ---
 

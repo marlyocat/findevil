@@ -48,13 +48,13 @@ def _count_mcp_tools() -> int:
     return n
 
 
-def test_canonical_tool_count_is_43():
-    """README, devpost, architecture.md, and accuracy-report.md all claim 43.
+def test_canonical_tool_count_is_45():
+    """README, devpost, architecture.md, and accuracy-report.md all claim 45.
     If this drifts, those docs become stale. Update the docs in the same PR
     that adds or removes a tool."""
-    assert _count_mcp_tools() == 43, (
+    assert _count_mcp_tools() == 45, (
         f"@mcp.tool() decoration count drifted; got {_count_mcp_tools()}, "
-        "expected 43. If you intentionally added/removed a tool, update "
+        "expected 45. If you intentionally added/removed a tool, update "
         "this test AND the count in README.md / docs/architecture.md / "
         "docs/devpost.md / docs/accuracy-report.md in the same change."
     )

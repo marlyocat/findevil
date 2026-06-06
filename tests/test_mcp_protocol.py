@@ -65,15 +65,15 @@ def _list_tools_runtime() -> list:
 # ---------------------------------------------------------------------------
 
 
-def test_runtime_tool_registry_exposes_43_tools():
+def test_runtime_tool_registry_exposes_45_tools():
     """The protocol-level view must match the AST count. If they diverge,
     a tool exists in source but isn't actually registered (a real bug
     that broke the project once already, hence the __main__.py shim).
     """
     tools = _list_tools_runtime()
     names = {_tool_name(t) for t in tools}
-    assert len(names) == 43, (
-        f"FastMCP exposes {len(names)} tools, expected 43. "
+    assert len(names) == 45, (
+        f"FastMCP exposes {len(names)} tools, expected 45. "
         f"Names: {sorted(names)}"
     )
 
