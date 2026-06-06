@@ -280,6 +280,7 @@ know about?*).
 - [docs/devpost.md](docs/devpost.md) — Devpost project description (copy-paste ready)
 - [docs/sift-setup.md](docs/sift-setup.md) — SIFT Workstation installation walkthrough
 - [docs/example-reports/](docs/example-reports/) — curated IR reports Claude wrote during calibration (one per scenario) + committed structured tool-execution trace `audit-trail-scenario-01.jsonl` for end-to-end auditability
+- [logs/README.md](logs/README.md) — the agent execution-log model: `audit.json` (mechanical per-tool trail, timestamps) + `token_usage.jsonl` (agent-layer token usage, correlated per tool execution via `scripts/extract_token_usage.py`)
 - [samples/attack-scenario-\*/README.md](samples/) — per-scenario narratives and ground-truth tables
 
 ## License

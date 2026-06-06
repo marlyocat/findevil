@@ -20,27 +20,33 @@ a SIFT VM.
 
 ## End-to-end auditability — committed example run (scenario 01)
 
-To satisfy the hackathon's "agent communication + tool execution
-sequence with timestamps" requirement, scenario 01 ships a complete
-captured run alongside its report:
+To satisfy the hackathon's Component 8 ("tool execution logs with
+timestamps and token usage [...] trace any finding back to the specific
+tool execution that produced it"), scenario 01 ships a complete captured
+run alongside its report. All four artifacts come from the **same
+investigation session**, so they correlate:
 
 | Artifact | What it is |
 |---|---|
 | [`agent-guard-scenario-01.md`](agent-guard-scenario-01.md) | The IR report Claude produced — agent's final reasoning, MITRE mapping, verification scorecard. |
-| [`agent-guard-scenario-01.transcript`](agent-guard-scenario-01.transcript) | Human-readable transcript header + the full agent message body. |
-| [`agent-guard-scenario-01.transcript.json`](agent-guard-scenario-01.transcript.json) | Raw `claude -p --output-format json` envelope from the same run (Anthropic API metadata, token counts, model id). |
-| [`audit-trail-scenario-01.jsonl`](audit-trail-scenario-01.jsonl) | Structured tool-execution trail — one JSON object per `_audit()` entry, with ISO 8601 timestamp, tool name, parameters, and result summary. Every claim in the markdown report traces back to a specific entry here. |
+| [`audit-trail-scenario-01.jsonl`](audit-trail-scenario-01.jsonl) | **Mechanical tool-execution trail** (MCP-server layer) — one JSON object per `_audit()` entry, with ISO 8601 timestamp, tool name, parameters, and result summary. Every claim in the report traces back to an entry here. |
+| [`token-usage-scenario-01.jsonl`](token-usage-scenario-01.jsonl) | **Token-usage trail** (agent layer) — one record per assistant turn that invoked a findevil tool: timestamp, model, tools + `tool_use_id`, and input/output/cache token counts. Recovered from the Claude Code session transcript by `scripts/extract_token_usage.py`. |
+| [`token-usage-scenario-01-summary.md`](token-usage-scenario-01-summary.md) | Grand totals + per-tool call counts for that run. |
 
-The other scenarios show only the curated report. Their full transcript +
-audit trail can be regenerated identically:
+Tokens are an agent-layer quantity the MCP server cannot observe, which
+is why the trail is split: `audit-trail` is the server's mechanical
+record of *what ran and when*; `token-usage` recovers *what it cost*
+from the session transcript and joins back by tool name + timestamp. See
+[`../../logs/README.md`](../../logs/README.md) for the full model.
+
+The other scenarios show only the curated report. Any run's trails can be
+regenerated identically:
 
 ```bash
-# On SIFT (or any host where findevil + claude CLI are installed):
-python tests/harness/agent_guard.py NN         # writes transcript + .json to logs/
-python scripts/capture_example_run.py \
-    --scenario NN \
-    --output docs/example-reports/audit-trail-scenario-NN.jsonl
-# then copy logs/agent_guard_sNN_*.transcript{,.json} here with canonical names
+# Mechanical tool trail is written live to logs/audit.json during any run.
+# Token-usage trail is extracted afterward from the Claude Code session:
+python scripts/extract_token_usage.py            # auto-selects the session
+# Copy logs/audit.json + logs/token_usage*.* here with canonical names.
 ```
 
 ## Index

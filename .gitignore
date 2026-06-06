@@ -25,10 +25,11 @@ evidence/
 .DS_Store
 Thumbs.db
 
-# Logs (keep structure, not content)
-logs/*.json
-logs/*.log
+# Logs — runtime trail (keep structure + docs, not captured content).
+# Committed example trails live in docs/example-reports/ instead.
+logs/*
 !logs/.gitkeep
+!logs/README.md
 
 # Environment
 .env
@@ -41,3 +42,4 @@ logs/*.log
 # in docs/example-reports/ instead.
 reports/
 !reports/.gitkeep
+IR-REPORT-*.md

@@ -609,6 +609,21 @@ tool exposed. Three enforcement layers, ordered by rigidity:
 3. **`CLAUDE.md` (prompt-level)** — "Never modify files in evidence
    directories." Defence-in-depth backstop, not trusted alone.
 
+**Where are the execution logs with timestamps and token usage?** Split
+across two layers, because the two quantities live in two different
+places. `logs/audit.json` is the MCP server's mechanical per-tool trail
+— one ISO-8601-timestamped line per tool execution (`tool`, `params`,
+`result_summary`), written automatically by `_audit()` and introspectable
+live via the `get_audit_trail` tool. Token usage, however, is an
+agent-layer quantity the server never sees, so `scripts/extract_token_usage.py`
+recovers it from Claude Code's session transcript into
+`logs/token_usage.jsonl` (per assistant turn: model, findevil tools
+invoked with their `tool_use_id`, and input/output/cache token counts).
+A finding cites a tool → `audit.json` gives the exact call → the
+matching turn in `token_usage.jsonl` gives its token cost. We deliberately
+do **not** fabricate a token estimate inside the server; each layer
+reports only what it can actually measure. See `logs/README.md`.
+
 ---
 
 ## 10. Comparison with the Protocol SIFT baseline
