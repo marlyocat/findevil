@@ -1,4 +1,4 @@
-# Findevil
+# FindEvil
 
 [![python](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -11,7 +11,7 @@ Built for the [FIND EVIL! hackathon](https://findevil.devpost.com/) by SANS Inst
 
 Most DFIR tooling targets Windows. But the systems attackers actually
 compromise in practice — web servers, Kubernetes clusters, cloud VMs —
-run Linux. Findevil is a custom MCP server built for investigating
+run Linux. FindEvil is a custom MCP server built for investigating
 compromised Linux systems.
 
 It turns Linux forensic utilities into **typed, read-only, audited**
@@ -23,7 +23,7 @@ correlates findings across sources, explicitly audits its own claims,
 and produces a full IR report with per-finding line-number provenance
 and a complete tool-call audit trail.
 
-Findevil analyzes **collected evidence** — a mounted disk image, a
+FindEvil analyzes **collected evidence** — a mounted disk image, a
 triage collection, or a memory capture, examined on a clean workstation
 (SIFT) — never the live, untrusted host. This is the standard dead-disk
 forensics model, and it's the basis for the read-only guarantee: there
@@ -36,10 +36,10 @@ Extension" architecture — Claude Code with a bash allow-list and
 instructional `SKILL.md` files. It works but openly admits to
 hallucinating more than is acceptable for forensic work.
 
-Findevil addresses this at the **architecture** layer, not the prompt
+FindEvil addresses this at the **architecture** layer, not the prompt
 layer:
 
-| Concern | Findevil approach |
+| Concern | FindEvil approach |
 |---------|-------------------|
 | LLM misreads large raw tool output | Every tool returns structured, pre-parsed Markdown — never raw `vol.py` dumps |
 | LLM fabricates findings | Every claim links to a raw log line number; structured provenance in every output |

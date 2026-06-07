@@ -1,6 +1,6 @@
-# Findevil — Accuracy Report
+# FindEvil — Accuracy Report
 
-This report documents what Findevil's tools do and do not find, measured
+This report documents what FindEvil's tools do and do not find, measured
 against four distinct ground-truth attack scenarios. It covers:
 
 1. Methodology — how accuracy is measured
@@ -32,7 +32,7 @@ session. They establish the ground-truth behaviour of each tool
 independent of the LLM.
 
 **Agent runs on the SIFT Workstation.** For each scenario we have Claude
-Code (connected to the Findevil MCP server) investigate the evidence from
+Code (connected to the FindEvil MCP server) investigate the evidence from
 cold, with no prior knowledge of the attack. The agent's tool-call trail
 is captured in `logs/audit.json`; the agent's own conclusions are captured
 in `reports/`. We then compare the agent's output against ground truth.
@@ -392,10 +392,10 @@ Every finding in every report maps to a specific invocation.
 ## 5. Hallucination mitigations
 
 Protocol SIFT, the hackathon baseline, documents that it "works" but
-"hallucinates more than we'd like." Findevil addresses hallucination at
+"hallucinates more than we'd like." FindEvil addresses hallucination at
 the architecture layer, not the prompt layer:
 
-| Risk | Mitigation in Findevil |
+| Risk | Mitigation in FindEvil |
 |---|---|
 | LLM misreads a 10k-line `vol.py` dump | Tools return structured summaries, not raw text dumps |
 | LLM confuses which log line supports a finding | Every MCP-tool finding includes the raw line number; judges can verify any claim |
@@ -629,13 +629,13 @@ before any read — this is the same check every tool uses, so there is
 no "special case" path that bypasses it.
 
 **How does your architecture prevent original data from being
-modified?** Architecturally, not via prompt. Claude calling a Findevil
+modified?** Architecturally, not via prompt. Claude calling a FindEvil
 MCP tool has no mechanism to modify evidence — there simply is no write
 tool exposed. Three enforcement layers, ordered by rigidity:
 
 1. **MCP server (architectural)** — no write-capable tool exists for
    any path under `FINDEVIL_EVIDENCE_DIR`. Prompt injection cannot talk
-   Findevil's tools into spoliating evidence because there is no such
+   FindEvil's tools into spoliating evidence because there is no such
    tool to call.
 2. **Claude Code `settings.json` (allow-list)** — built-in `Write`,
    `Edit`, and raw `Bash` tools are scoped to `./analysis/`,
@@ -670,7 +670,7 @@ hackathon.
 
 Concrete behavioural differences:
 
-| Aspect | Protocol SIFT (baseline) | Findevil |
+| Aspect | Protocol SIFT (baseline) | FindEvil |
 |---|---|---|
 | Pattern searches | Returns raw lines; Claude parses in context | Tools surface grouped, ranked structured summaries |
 | Brute-force detection | Depends on Claude thinking to correlate | `auth_summary` returns a verdict string including "LIKELY COMPROMISE" when the FS IPs overlap with failed-login IPs |
@@ -681,8 +681,8 @@ Concrete behavioural differences:
 | IOC reputation | Not provided | Bundled offline cache; deterministic lookups |
 | Supply chain / container visibility | Not provided directly | `analyze_package_logs` + `analyze_container_artifacts` with typosquat and privileged-container detection |
 
-This is not a claim that Findevil is objectively better at every task.
-It is a claim that when Findevil's tools apply, its findings are harder
+This is not a claim that FindEvil is objectively better at every task.
+It is a claim that when FindEvil's tools apply, its findings are harder
 to fabricate. Scenarios 02, 03, and 04 — each designed to disagree with
 prior ones — are direct demonstrations.
 

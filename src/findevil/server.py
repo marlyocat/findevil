@@ -1,5 +1,5 @@
 """
-Findevil MCP Server
+FindEvil MCP Server
 
 Exposes SANS SIFT Workstation forensic tools as typed, read-only MCP tools.
 Designed to be used by Claude Code (or any MCP client) for autonomous IR triage.

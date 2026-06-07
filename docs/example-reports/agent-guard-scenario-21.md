@@ -2,7 +2,7 @@
 **Incident ID:** INC-2026-04-23-webserver-prod-21  
 **Evidence:** `evidence/attack-scenario-21-mid-ir/`  
 **Report generated:** 2026-04-23 (UTC)  
-**Analyst:** Findevil autonomous IR agent  
+**Analyst:** FindEvil autonomous IR agent  
 **Status at evidence capture:** Containment phase — remediation actively in progress by `alice`
 
 ---

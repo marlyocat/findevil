@@ -1,6 +1,6 @@
 # Attack Scenario 01 — SSH Brute Force → Root Compromise → Backdoor
 
-A synthetic Linux IR case for testing Findevil's auth-log analysis tools.
+A synthetic Linux IR case for testing FindEvil's auth-log analysis tools.
 
 ## Scenario narrative
 

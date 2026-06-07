@@ -1,4 +1,4 @@
-# Findevil — Devpost Submission
+# FindEvil — Devpost Submission
 
 Copy the sections below directly into the Devpost form. Word counts are
 approximate; feel free to trim.
@@ -18,11 +18,11 @@ Most DFIR tooling targets Windows workstations. But 96% of the top 1
 million web servers, most cloud workloads, and every Kubernetes node
 runs Linux — and that's exactly where GTG-1002 lived. The defensive
 equivalent didn't exist: an autonomous Linux IR agent that a real
-on-call engineer would trust at 3am. That's what Findevil is.
+on-call engineer would trust at 3am. That's what FindEvil is.
 
 ## What it does
 
-Findevil is a custom MCP (Model Context Protocol) server that
+FindEvil is a custom MCP (Model Context Protocol) server that
 exposes **45 typed, read-only, audited forensic tools** across fourteen
 categories — SSH auth logs, systemd journal, filesystem persistence,
 shell history, web server logs, webshell detection, package/supply-
@@ -174,7 +174,7 @@ build the scaffolding — you need to encode what senior
 responders check, in what order, with what corroboration. The
 LLM handles the reasoning; the server handles the evidence.
 
-## What's next for Findevil
+## What's next for FindEvil
 
 - **Live threat-intel feeds** merged into the offline cache
   (abuse.ch, FireHOL, MalwareBazaar, URLhaus, TOR exit list).
@@ -203,7 +203,7 @@ LLM handles the reasoning; the server handles the evidence.
 | Challenges we ran into | § Challenges we ran into above |
 | Accomplishments that we're proud of | § Accomplishments we're proud of above |
 | What we learned | § What we learned above |
-| What's next for Findevil | § What's next for Findevil above |
+| What's next for FindEvil | § What's next for FindEvil above |
 | Built with | `python`, `mcp`, `claude-code`, `sans-sift-workstation` |
 | Try it out | https://github.com/marlyocat/findevil |
 

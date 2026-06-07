@@ -1,4 +1,4 @@
-# Findevil
+# FindEvil
 
 Autonomous AI agent for **Linux incident response forensics**, built for the FIND EVIL! hackathon (SANS Institute).
 
@@ -8,7 +8,7 @@ An MCP (Model Context Protocol) server that wraps Linux forensic tools as typed,
 
 ## Why Linux-focused
 
-Most DFIR tooling targets Windows workstations. But the systems attackers actually target in practice — web servers, Kubernetes clusters, cloud VMs — run Linux. Findevil fills that gap, built from an SRE's perspective on what's normal vs anomalous in a production Linux environment.
+Most DFIR tooling targets Windows workstations. But the systems attackers actually target in practice — web servers, Kubernetes clusters, cloud VMs — run Linux. FindEvil fills that gap, built from an SRE's perspective on what's normal vs anomalous in a production Linux environment.
 
 ## Scope
 

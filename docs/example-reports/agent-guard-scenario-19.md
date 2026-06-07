@@ -1,7 +1,7 @@
 # Incident Report — datasci-prod-19
 **Case:** Scenario 19 — IDS alert during chaos engineering exercise  
 **Evidence:** `evidence/attack-scenario-19-chaos-cover`  
-**Analyst:** Findevil autonomous IR (Claude / findevil MCP)  
+**Analyst:** FindEvil autonomous IR (Claude / findevil MCP)  
 **Report generated:** 2026-04-23 UTC  
 
 ---

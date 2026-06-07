@@ -1,7 +1,7 @@
 """
 File integrity monitoring (FIM).
 
-Detection-side counterpart to the rest of Findevil's IR tools. Takes a
+Detection-side counterpart to the rest of FindEvil's IR tools. Takes a
 content-addressed snapshot of every forensic-critical file (hash + mode
 + owner + size + mtime), writes it to a JSON baseline, and later
 compares the current state against that baseline to surface any

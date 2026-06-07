@@ -1,7 +1,7 @@
 # Incident Response Report — Scenario 08: False Flag / Attribution Misdirection
 
 **Case ID:** attack-scenario-08-falseflag  
-**Analyst:** Findevil Autonomous IR (Claude / findevil MCP)  
+**Analyst:** FindEvil Autonomous IR (Claude / findevil MCP)  
 **Evidence root:** `evidence/attack-scenario-08-falseflag/`  
 **Report generated:** 2026-04-23 (UTC)  
 **Classification:** CONFIRMED COMPROMISE — ATTRIBUTION INDETERMINATE
@@ -209,7 +209,7 @@ All tool invocations were read-only. No evidence files were modified. The full a
 
 ---
 
-*Report produced autonomously by Findevil v0.1 (findevil MCP + Claude). All conclusions are grounded in raw tool output. Inferences are explicitly labelled. No evidence files were modified.*
+*Report produced autonomously by FindEvil v0.1 (findevil MCP + Claude). All conclusions are grounded in raw tool output. Inferences are explicitly labelled. No evidence files were modified.*
 
 ---
 

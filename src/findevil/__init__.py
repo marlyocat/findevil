@@ -1,1 +1,1 @@
-"""Findevil - Autonomous IR agent via MCP."""
+"""FindEvil - Autonomous IR agent via MCP."""

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Findevil MCP hallucination guard.
+FindEvil MCP hallucination guard.
 
 Runs the findevil MCP server as a subprocess, connects as an MCP client,
 invokes each tool against each of the four ground-truth scenarios, and

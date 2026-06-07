@@ -1,4 +1,4 @@
-# Findevil Architecture
+# FindEvil Architecture
 
 ## Architectural pattern
 
@@ -29,7 +29,7 @@ flowchart TB
         writer[Built-in Write tool<br/>allow-listed paths only:<br/>./analysis ./reports ./exports]
     end
 
-    subgraph Findevil[Findevil MCP Server stdio subprocess]
+    subgraph FindEvil[FindEvil MCP Server stdio subprocess]
         direction TB
         entry[__main__.py<br/>python -m findevil]
         mcp["FastMCP instance<br/>45 typed tools"]
@@ -94,7 +94,7 @@ flowchart TB
 ```mermaid
 sequenceDiagram
     participant C as Claude (in Claude Code)
-    participant S as Findevil MCP server
+    participant S as FindEvil MCP server
     participant V as _validate_evidence_path
     participant T as Tool implementation
     participant A as Audit logger
@@ -158,7 +158,7 @@ Three distinct enforcement layers, from hardest to softest:
 1. **MCP server — architectural** (most rigid). No write-capable tool
    exists for any path under `FINDEVIL_EVIDENCE_DIR`. `_validate_evidence_path`
    is called in every tool entrypoint before any file operation. A prompt
-   injection cannot talk Findevil's tools into spoliating evidence because
+   injection cannot talk FindEvil's tools into spoliating evidence because
    there is no such tool to call. **The same principle applies to
    conclusions: `finalize_report` is the only tool that emits a verdict,
    and it architecturally rejects an unverified CONFIRMED claim — so an
@@ -188,7 +188,7 @@ raw evidence.
 
 Hackathon motivation: attackers operate at machine speed, defenders don't.
 The big speedup comes from the agent loop itself (parallel autonomous tool
-calls vs sequential human analysis), but Findevil's architecture also
+calls vs sequential human analysis), but FindEvil's architecture also
 helps:
 
 - **Structured outputs** use far fewer tokens than raw bash dumps. On the

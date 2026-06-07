@@ -4,7 +4,7 @@ Offline threat-intel integration.
 In a real IR case the analyst's first move after spotting an IOC is to
 check it against reputation sources. The agent's equivalent needs to
 work offline (the SIFT VM is often air-gapped during evidence triage),
-so Findevil ships with a bundled IOC cache. In production you'd merge
+so FindEvil ships with a bundled IOC cache. In production you'd merge
 this with live feeds from abuse.ch, FireHOL, MalwareBazaar, etc.; this
 module provides the lookup interface that works identically either way.
 

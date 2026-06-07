@@ -1,6 +1,6 @@
 # Security policy
 
-Findevil is a forensic-IR tool that runs on potentially-compromised
+FindEvil is a forensic-IR tool that runs on potentially-compromised
 systems and reads sensitive evidence. Bugs in tools like this can
 have unusual consequences — silently mis-classifying an attack as
 benign, leaking a path traversal, or modifying evidence in a way

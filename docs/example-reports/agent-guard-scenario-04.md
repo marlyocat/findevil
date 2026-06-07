@@ -8,7 +8,7 @@
 | **Evidence path** | `evidence/attack-scenario-04/fs` |
 | **Evidence type** | Filesystem snapshot (no auth.log / access.log) |
 | **Analysis date** | 2026-04-23 UTC |
-| **Analyst** | Findevil autonomous IR agent |
+| **Analyst** | FindEvil autonomous IR agent |
 | **Classification** | CONFIRMED COMPROMISE — Cryptominer deployment via supply-chain |
 | **Severity** | CRITICAL |
 
@@ -378,7 +378,7 @@ The compromise was made possible by **three compounding failures**:
 
 ---
 
-*Report generated 2026-04-23 UTC by Findevil autonomous IR agent (claude-sonnet-4-6). All findings grounded in direct artifact reads and MCP tool output. No evidence files modified. Chain of custody intact. Audit trail available via `get_audit_trail()`.*
+*Report generated 2026-04-23 UTC by FindEvil autonomous IR agent (claude-sonnet-4-6). All findings grounded in direct artifact reads and MCP tool output. No evidence files modified. Chain of custody intact. Audit trail available via `get_audit_trail()`.*
 
 ---
 

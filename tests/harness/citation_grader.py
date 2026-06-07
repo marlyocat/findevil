@@ -3,7 +3,7 @@
 Citation grader — does the agent carry tool-side line numbers into its
 final IR report?
 
-Findevil's headline differentiator vs Protocol SIFT is verifiable
+FindEvil's headline differentiator vs Protocol SIFT is verifiable
 provenance: every tool annotates findings with a raw log line number
 ("First seen line: 47", "auth.log:96", "(line 47)") and the IR report
 is supposed to inherit those citations. agent_guard.py grades the

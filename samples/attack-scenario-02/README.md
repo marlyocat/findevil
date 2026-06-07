@@ -1,6 +1,6 @@
 # Attack Scenario 02 — Stolen CI/CD Key → Quiet Persistence
 
-A deliberately **subtle** intrusion designed to test whether Findevil:
+A deliberately **subtle** intrusion designed to test whether FindEvil:
 
 1. Correctly detects compromise via multi-artifact correlation (not a single
    obvious signal like brute force).

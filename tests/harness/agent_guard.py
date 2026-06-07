@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Findevil MCP agent-level hallucination guard.
+FindEvil MCP agent-level hallucination guard.
 
 Spawns ``claude -p`` headlessly against one attack scenario, captures the
 final report, and grades it against ground-truth markers distilled from

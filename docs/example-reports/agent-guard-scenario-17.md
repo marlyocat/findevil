@@ -1,7 +1,7 @@
 # Incident Report — datasci-prod-17
 **Case:** Scenario 17 — IDS alerts: security-tool stops + cron injection  
 **Evidence:** `evidence/attack-scenario-17-chaos`  
-**Analyst:** Findevil autonomous IR (Claude / findevil MCP)  
+**Analyst:** FindEvil autonomous IR (Claude / findevil MCP)  
 **Report generated:** 2026-04-23 UTC  
 
 ---

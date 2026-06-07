@@ -6,7 +6,7 @@
 | **Case** | attack-scenario-02 |
 | **Host** | webserver-prod-02 |
 | **Report generated** | 2026-04-23 UTC |
-| **Analyst** | Findevil autonomous IR agent (claude-sonnet-4-6) |
+| **Analyst** | FindEvil autonomous IR agent (claude-sonnet-4-6) |
 | **Evidence path** | `evidence/attack-scenario-02/` |
 | **Artifacts examined** | `auth.log`, `fs/etc/passwd`, `fs/etc/shadow`, `fs/etc/ssh/sshd_config`, `fs/etc/sudoers.d/deploy`, `fs/etc/systemd/system/system-updater.service`, `fs/home/deploy/.ssh/authorized_keys`, `fs/home/deploy/.bash_history`, `fs/home/deploy/.bashrc`, `fs/home/alice/.bash_history`, `fs/root/.bash_history` |
 | **Verdict** | **CONFIRMED COMPROMISE** |

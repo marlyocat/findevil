@@ -1,6 +1,6 @@
 # Agent execution logs
 
-Findevil is a **single-agent** submission (Claude Code + a custom MCP
+FindEvil is a **single-agent** submission (Claude Code + a custom MCP
 server). Per the hackathon's Component 8, this directory provides "tool
 execution logs with timestamps and token usage" and lets a judge "trace
 any finding back to the specific tool execution that produced it."

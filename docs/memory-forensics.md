@@ -1,6 +1,6 @@
 # Memory forensics with findevil
 
-Findevil exposes a seven-tool family for analysing Linux memory captures
+FindEvil exposes a seven-tool family for analysing Linux memory captures
 via Volatility 3. This doc covers the workflow end-to-end:
 
 1. Acquiring a memory dump from a Linux host
@@ -22,7 +22,7 @@ indicators in RAM, not on disk:
 | **Reflective ELF loader** / fileless | None | RWX memory region, no backing file |
 | **Cobalt-Strike-style beacon** | None | Encoded shellcode in process memory |
 
-A disk-only investigation can miss any of these. Findevil's memory
+A disk-only investigation can miss any of these. FindEvil's memory
 tools target the canonical Volatility 3 plugins that surface exactly
 these classes of artefact.
 

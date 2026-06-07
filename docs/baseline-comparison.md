@@ -3,7 +3,7 @@
 The hackathon lists four architectural patterns. Protocol SIFT (the
 baseline starter kit) uses pattern #1, "Direct Agent Extension" —
 Claude Code with a curated `settings.json` bash allow-list and rich
-`SKILL.md` files describing SIFT tools. Findevil uses pattern #2,
+`SKILL.md` files describing SIFT tools. FindEvil uses pattern #2,
 "Custom MCP Server."
 
 §10 of the accuracy report argues architecturally why findevil should

@@ -76,7 +76,7 @@ You need forensic images to test against. Free sources:
 
 Download a small case to `/evidence/` and you're ready to start testing.
 
-### Install Findevil
+### Install FindEvil
 
 ```bash
 cd /path/to/findevil
